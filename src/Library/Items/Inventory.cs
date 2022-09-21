@@ -1,17 +1,25 @@
 using System.Collections.Generic;
 public class Inventory{
-    List<IItem> CharacterInvetory = new List<IItem>();
+    /// Habría que poner un método que devuelva el inventario de manera bonita, prontito para imprimir donde se quiera
+    /// Que ponga tanto los items como sus estadísticas
+
+    //Se crean dos listas, una para el arsenal del personaje, otro para su ropaje.
+    //Así, al momento de atacar solo se muestran los items que sirven para esto y no, por ejemplo, una túnica.
+    //Como uno puede resolver cualquier tipo de item, se utiliza la interfaz, en cambio para el otro, solo la clase Gear
+    List<IItem> CharacterWeaponry = new List<IItem>();
+    List<Gear> CharacterGear = new List<Gear>();
+
     void AddGear(Gear gear){
-        CharacterInvetory.Add(gear);
+        CharacterGear.Add(gear);
     }
     void RemoveGear(Gear gear){
-        CharacterInvetory.Remove(gear);
+        CharacterGear.Remove(gear);
     }
 
-    void AddWeapon(Weapon weapon){
-    
+    void AddWeaponry(IItem weaponry){
+        CharacterWeaponry.Add(weaponry);
     }
-    void RemoveWeapon(Weapon weapon){
-        
+    void RemoveWeapon(IItem weaponry){
+        CharacterWeaponry.Add(weaponry);
     }
 }

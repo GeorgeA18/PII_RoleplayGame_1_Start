@@ -3,10 +3,9 @@ public interface ICharacter{
     int Health{get;set;}
     int AttackValue{get;set;}
     int DefenseValue{get;set;}
+    Inventory Inventory {get; set;}
     void Attack();
     void ReceiveAttack();
     void Cure();
-
-    Inventory Inventory {get; set;}
 
 }
