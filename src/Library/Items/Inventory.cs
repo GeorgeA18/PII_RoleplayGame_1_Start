@@ -2,6 +2,7 @@ using System.Collections.Generic;
 public class Inventory{
     /// Habría que poner un método que devuelva el inventario de manera bonita, prontito para imprimir donde se quiera
     /// Que ponga tanto los items como sus estadísticas
+    /// También que se devuelva la suma de los valores de ataque / defensa para los metodos de los personajes
 
     //Se crean dos listas, una para el arsenal del personaje, otro para su ropaje.
     //Así, al momento de atacar solo se muestran los items que sirven para esto y no, por ejemplo, una túnica.
