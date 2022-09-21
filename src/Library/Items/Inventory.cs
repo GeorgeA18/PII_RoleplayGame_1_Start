@@ -1,17 +1,17 @@
 using System.Collections.Generic;
 public class Inventory{
     List<IItem> CharacterInvetory = new List<IItem>();
-    void AddSGear(Spell spell){
-
+    void AddGear(Gear gear){
+        CharacterInvetory.Add(gear);
     }
-    void RemoveGear(Spell spell){
-        
+    void RemoveGear(Gear gear){
+        CharacterInvetory.Remove(gear);
     }
 
-    void AddWeapon(Spell spell){
-
+    void AddWeapon(Weapon weapon){
+    
     }
-    void RemoveWeapon(Spell spell){
+    void RemoveWeapon(Weapon weapon){
         
     }
 }

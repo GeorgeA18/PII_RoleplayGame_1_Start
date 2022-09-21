@@ -7,6 +7,6 @@ public interface ICharacter{
     void ReceiveAttack();
     void Cure();
 
-    Inventory inventory {get; set;}
+    Inventory Inventory {get; set;}
 
 }

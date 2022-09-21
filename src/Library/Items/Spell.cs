@@ -1,6 +1,6 @@
 public class Spell{
-    string Name{get; set;}
-    int AttackValue{get; set;}
-    int DefenseValue{get; set;}
+    public string Name{get; set;}
+    public int AttackValue{get; set;}
+    public int DefenseValue{get; set;}
     
 }
