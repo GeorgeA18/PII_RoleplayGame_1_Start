@@ -1,5 +1,6 @@
 public class Dwarves : ICharacter{
     public string Name{get;set;}
+    public Inventory inventory {get; set;}
     public int Health{get;set;}
     public int AttackValue{get;set;}
     public int DefenseValue{get;set;}
