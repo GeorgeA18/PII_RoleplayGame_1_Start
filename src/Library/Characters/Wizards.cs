@@ -4,7 +4,7 @@ public class Wizard : ICharacter{
     public int AttackValue{get;set;}
     public int DefenseValue{get;set;}
     public void Attack(){
-
+        
     }
     public void ReceiveAttack(){
 
