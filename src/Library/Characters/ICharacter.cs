@@ -8,8 +8,6 @@ public interface ICharacter{
     Inventory Inventory {get; set;}
     int AttackValue{get;}
     int DefenseValue{get;}
-    int GetAttackValue();
-    int GetDefenseValue();
     void Attack(ICharacter character, IItem Item);
     void Cure(int healing);
 

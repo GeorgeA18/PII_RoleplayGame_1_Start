@@ -1,8 +1,9 @@
+using System;
 using System.Collections.Generic;
+
+namespace RPG;
+
 public class Inventory{
-    /// Habría que poner un método que devuelva el inventario de manera bonita, prontito para imprimir donde se quiera
-    /// Que ponga tanto los items como sus estadísticas
-    /// También que se devuelva la suma de los valores de ataque / defensa para los metodos de los personajes
 
     //Se crean dos listas, una para el arsenal del personaje, otro para su ropaje.
     //Así, al momento de atacar solo se muestran los items que sirven para esto y no, por ejemplo, una túnica.
@@ -27,5 +28,39 @@ public class Inventory{
     public Inventory(){
         this.CharacterGear = new List<Gear>();
         this.CharacterWeaponry = new List<IItem>();
+    }
+
+    public int GetAttackValue(){
+        int attackValue=0;
+
+        foreach(IItem item in this.CharacterWeaponry){
+            attackValue+=item.AttackValue;
+        }
+        return attackValue;
+    }
+
+    public int GetDefenseValue(){
+        int defenseValue=0;
+
+        foreach(IItem item in this.CharacterWeaponry){
+            defenseValue+=item.DefenseValue;
+        }
+
+        return defenseValue;
+    }
+
+
+
+    public void PrintInventory(ICharacter character){
+
+        Console.WriteLine($"{character.Name}'s INVENTORY SUMMARY");
+        Console.WriteLine("Items:");
+        foreach(IItem item in this.CharacterWeaponry){
+            Console.WriteLine($"{item} | Attack : {item.AttackValue} | Defense : {item.DefenseValue}");
+        }
+        Console.WriteLine("Gear and accesories:");
+        foreach(IItem item in this.CharacterGear){
+            Console.WriteLine(item);
+        }
     }
 }

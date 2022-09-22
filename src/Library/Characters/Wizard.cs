@@ -10,31 +10,13 @@ public class Wizard : ICharacter{
     public int Health{get;set;}
     public int AttackValue{get;}
     public int DefenseValue{get;}
-    public int GetAttackValue(){
-        int attackValue=0;
-        /*
-        foreach(IItem item in this.CharacterWeaponry){
-            attackValue+=item.AttackValue;
-        }
-        */
-        return attackValue;
-    }
-    public int GetDefenseValue(){
-        int defenseValue=0;
-        /*
-        foreach(IItem item in this.CharacterWeaponry){
-            defenseValue+=item.DefenseValue;
-        }
-        */
-        return defenseValue;
-    }
     public Wizard(string Name, int Health, Inventory inventory){
 
         this.Name= Name;
         this.Health = Health;
         this.Inventory= Inventory;
-        //this.AttackValue -> invocar método
-        //this.DefenseValue -> invocar método
+        this.AttackValue = this.Inventory.GetAttackValue();
+        this.DefenseValue = this.Inventory.GetDefenseValue();
     } 
     public void Attack(ICharacter character, IItem item){
 
