@@ -7,8 +7,8 @@ public class Inventory{
     //Se crean dos listas, una para el arsenal del personaje, otro para su ropaje.
     //Así, al momento de atacar solo se muestran los items que sirven para esto y no, por ejemplo, una túnica.
     //Como uno puede resolver cualquier tipo de item, se utiliza la interfaz, en cambio para el otro, solo la clase Gear
-    List<IItem> CharacterWeaponry = new List<IItem>();
-    List<Gear> CharacterGear = new List<Gear>();
+    List<IItem> CharacterWeaponry;
+    List<Gear> CharacterGear;
 
     void AddGear(Gear gear){
         CharacterGear.Add(gear);
@@ -24,5 +24,8 @@ public class Inventory{
         CharacterWeaponry.Add(weaponry);
     }
 
-    
+    public Inventory(){
+        this.CharacterGear = new List<Gear>();
+        this.CharacterWeaponry = new List<IItem>();
+    }
 }

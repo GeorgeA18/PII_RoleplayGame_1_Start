@@ -8,7 +8,10 @@ namespace RPG
         {
             //Instancias para cada personaje
             //Falta completar el funcionamiento de inventory
-            Wizard harry = new Wizard("Harry");
+
+            Inventory inventarioHarry = new Inventory();
+
+            Wizard harry = new Wizard("Harry",inventarioHarry,100, 30, 20);
             harry.Health = 100;
 
             Dwarf gernis = new Dwarf("Gernis");
