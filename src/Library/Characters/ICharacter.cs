@@ -9,6 +9,6 @@ public interface ICharacter{
     int AttackValue{get;}
     int DefenseValue{get;}
     void Attack(ICharacter character, IItem Item);
-    void Cure(int healing);
+    void Cure();
 
 }

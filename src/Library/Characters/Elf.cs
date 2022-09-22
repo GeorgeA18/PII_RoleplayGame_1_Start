@@ -44,9 +44,9 @@ public class Elf : ICharacter{
 
     }
 
-    public void Cure(int healing){
+    public void Cure(){
 
-        this.Health += healing;
+        this.Health = 100;
 
     }
 
