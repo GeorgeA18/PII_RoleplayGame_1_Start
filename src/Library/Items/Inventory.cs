@@ -20,7 +20,9 @@ public class Inventory{
     void AddWeaponry(IItem weaponry){
         CharacterWeaponry.Add(weaponry);
     }
-    void RemoveWeapon(IItem weaponry){
+    void RemoveWeaponry(IItem weaponry){
         CharacterWeaponry.Add(weaponry);
     }
+
+    
 }
