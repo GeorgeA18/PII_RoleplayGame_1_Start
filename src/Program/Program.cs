@@ -7,20 +7,15 @@ namespace RPG
         static void Main(string[] args)
         {
             //Instancias para cada personaje
-            //Falta completar el funcionamiento de inventory
-<<<<<<< HEAD
-            Wizard harry = new Wizard("Harry", 100);
-=======
-
+            
             Inventory inventarioHarry = new Inventory();
+            Wizard harry = new Wizard("Harry", 100, inventarioHarry);
+            
+            Inventory inventarioGernis = new Inventory();
+            Dwarf gernis = new Dwarf("Gernis", 100, inventarioGernis);
 
-            Wizard harry = new Wizard("Harry",inventarioHarry,100, 30, 20);
-            harry.Health = 100;
->>>>>>> 4a5e9d5f69ea1e3e0ef95b8c0cb9885ee0c5b740
-
-            Dwarf gernis = new Dwarf("Gernis", 100);
-
-            Elf gimbel = new Elf("Gimbel", 100);
+            Inventory inventarioGimbel = new Inventory();
+            Elf gimbel = new Elf("Gimbel", 100, inventarioGimbel);
 
             //Instancias para cada item
             Gear robe = new Gear("Robe", false);

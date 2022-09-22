@@ -10,17 +10,17 @@ public class Inventory{
     List<IItem> CharacterWeaponry;
     List<Gear> CharacterGear;
 
-    void AddGear(Gear gear){
+    public void AddGear(Gear gear){
         CharacterGear.Add(gear);
     }
-    void RemoveGear(Gear gear){
+    public void RemoveGear(Gear gear){
         CharacterGear.Remove(gear);
     }
 
-    void AddWeaponry(IItem weaponry){
+    public void AddWeaponry(IItem weaponry){
         CharacterWeaponry.Add(weaponry);
     }
-    void RemoveWeaponry(IItem weaponry){
+    public void RemoveWeaponry(IItem weaponry){
         CharacterWeaponry.Add(weaponry);
     }
 

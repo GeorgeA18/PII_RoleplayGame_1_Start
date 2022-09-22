@@ -28,7 +28,7 @@ public class Elf : ICharacter{
         */
         return defenseValue;
     }
-    public Elf(string Name, int Health){
+    public Elf(string Name, int Health, Inventory inventory){
 
         this.Name=Name;
         this.Health = Health;

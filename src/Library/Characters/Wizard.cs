@@ -28,11 +28,11 @@ public class Wizard : ICharacter{
         */
         return defenseValue;
     }
-    public Wizard(string Name, int Health){
+    public Wizard(string Name, int Health, Inventory inventory){
 
-        this.Name=Name;
+        this.Name= Name;
         this.Health = Health;
-        this.Inventory=Inventory;
+        this.Inventory= Inventory;
         //this.AttackValue -> invocar método
         //this.DefenseValue -> invocar método
     } 

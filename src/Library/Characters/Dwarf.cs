@@ -29,7 +29,7 @@ public class Dwarf : ICharacter{
         return defenseValue;
     }
 
-    public Dwarf(string Name, int Health){
+    public Dwarf(string Name, int Health, Inventory inventory){
         
         this.Name=Name;
         this.Health = Health;
