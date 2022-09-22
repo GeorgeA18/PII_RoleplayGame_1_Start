@@ -3,8 +3,6 @@ using System;
 namespace RPG;
 
 public class Wizard : ICharacter{
-    //Se tiene que poner que calcule el ataque/defensa, iterando en cada lista del inventario, para todos los ítems
-    //Attack, Cure, ReceiveAttack todavía no tienen código
     public string Name{get;set;}
     public Inventory Inventory {get;set;}
     public SpellBook SpellBook {get;set;}

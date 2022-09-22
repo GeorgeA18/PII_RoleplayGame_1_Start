@@ -2,9 +2,6 @@ using System;
 
 namespace RPG;
 public class Elf : ICharacter{
-    //Se tiene que poner que calcule el ataque/defensa, iterando en cada lista del inventario, para solo los ítems que no sean mágicos
-    //Attack, Cure, ReceiveAttack todavía no tienen código
-
     public string Name{get;set;}
     public Inventory Inventory {get; set;}
     public int Health{get;set;}

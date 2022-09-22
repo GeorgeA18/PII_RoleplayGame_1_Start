@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System;
 namespace RPG;
 public class SpellBook : IItem{
     //Faltaría un método para mostrar los spells del libro
@@ -39,5 +40,15 @@ public class SpellBook : IItem{
             value+=spell.DefenseValue;
         }
         return value;
+    }
+
+    public void PrintSpellBook(ICharacter wizard){
+
+        Console.WriteLine($"{wizard.Name}'s SPELLBOOK SUMMARY");
+        Console.WriteLine("Spells list:");
+        foreach(Spell spell in this.CharacterSpellBook){
+            Console.WriteLine($"{spell} | Attack : {spell.AttackValue} | Defense : {spell.DefenseValue}");
+        }
+
     }
 }
