@@ -8,7 +8,9 @@ public class Elf : ICharacter{
     public string Name{get;set;}
     public Inventory Inventory {get; set;}
     public int Health{get;set;}
-    public int AttackValue(){
+    public int AttackValue{get;}
+    public int DefenseValue{get;}
+    public int GetAttackValue(){
         int attackValue=0;
         /*
         foreach(IItem item in this.CharacterWeaponry){
@@ -17,7 +19,7 @@ public class Elf : ICharacter{
         */
         return attackValue;
     }
-    public int DefenseValue(){
+    public int GetDefenseValue(){
         int defenseValue=0;
         /*
         foreach(IItem item in this.CharacterWeaponry){
@@ -26,19 +28,43 @@ public class Elf : ICharacter{
         */
         return defenseValue;
     }
+    public Elf(string Name, int Health){
 
-    public Elf(string Name, Inventory Inventory, int Health, int AttackValue, int DefenseValue){
         this.Name=Name;
-        this.Inventory=Inventory;
         this.Health = Health;
-    }
+        this.Inventory=Inventory;
+        //this.AttackValue -> invocar método
+        //this.DefenseValue -> invocar método
+
+    } 
     public void Attack(ICharacter character, IItem item){
 
-    }
-    public void ReceiveAttack(IItem item){
+        //Falta integrar el defense value
+
+        if (this.CharacterWeaponry.Contains(item))
+        {
+            if (character.Health > item.AttackValue + character.DefenseValue)
+            {
+                character.Health -= item.AttackValue;
+                Console.WriteLine($"{this.Name} attacked {character.Name} with {item} and now their health decreased to {character.Health}.");
+            }
+            else
+            {
+                character.Health = 0;
+                Console.WriteLine($"{this.Name} attacked {character.Name} with {item} and killed them.");
+            }
+        }  
+        else
+        {
+            Console.WriteLine($"You do not have that item, dumb bitch!");
+        }
 
     }
+
     public void Cure(int healing){
 
+        this.Health += healing;
+
     }
-}
+
+    }

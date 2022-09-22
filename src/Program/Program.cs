@@ -8,14 +8,11 @@ namespace RPG
         {
             //Instancias para cada personaje
             //Falta completar el funcionamiento de inventory
-            Wizard harry = new Wizard("Harry");
-            harry.Health = 100;
+            Wizard harry = new Wizard("Harry", 100);
 
-            Dwarf gernis = new Dwarf("Gernis");
-            gernis.Health = 100;
+            Dwarf gernis = new Dwarf("Gernis", 100);
 
-            Elf gimbel = new Elf("Gimbel");
-            gimbel.Health = 100;
+            Elf gimbel = new Elf("Gimbel", 100);
 
             //Instancias para cada item
             Gear robe = new Gear("Robe", false);
