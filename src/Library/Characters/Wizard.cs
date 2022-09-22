@@ -6,17 +6,19 @@ public class Wizard : ICharacter{
     //Se tiene que poner que calcule el ataque/defensa, iterando en cada lista del inventario, para todos los ítems
     //Attack, Cure, ReceiveAttack todavía no tienen código
     public string Name{get;set;}
-    public Inventory Inventory {get; set;}
+    public Inventory Inventory {get;set;}
+    public SpellBook SpellBook {get;set;}
     public int Health{get;set;}
     public int AttackValue{get;}
     public int DefenseValue{get;}
-    public Wizard(string Name, int Health, Inventory inventory){
+    public Wizard(string Name, int Health, Inventory inventory, SpellBook spellBook){
 
         this.Name= Name;
         this.Health = Health;
         this.Inventory= Inventory;
-        this.AttackValue = this.Inventory.GetAttackValue();
-        this.DefenseValue = this.Inventory.GetDefenseValue();
+        this.SpellBook = SpellBook;
+        this.AttackValue = this.Inventory.GetAttackValue() + this.SpellBook.GetSpellBookAttack();
+        this.DefenseValue = this.Inventory.GetDefenseValue()+ this.SpellBook.GetSpellBookDefense();
     } 
     public void Attack(ICharacter character, IItem item){
 

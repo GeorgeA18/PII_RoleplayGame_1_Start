@@ -8,14 +8,15 @@ namespace RPG
         {
             //Instancias para cada personaje
             
-            Inventory inventarioHarry = new Inventory();
-            Wizard harry = new Wizard("Harry", 100, inventarioHarry);
+            Inventory harryInventory = new Inventory();
+            SpellBook harrySpellBook = new SpellBook("Harry's Spellbook");
+            Wizard harry = new Wizard("Harry", 100, harryInventory, harrySpellBook);
             
-            Inventory inventarioGernis = new Inventory();
-            Dwarf gernis = new Dwarf("Gernis", 100, inventarioGernis);
+            Inventory gernisInventory = new Inventory();
+            Dwarf gernis = new Dwarf("Gernis", 100, gernisInventory);
 
-            Inventory inventarioGimbel = new Inventory();
-            Elf gimbel = new Elf("Gimbel", 100, inventarioGimbel);
+            Inventory gimbelInventory = new Inventory();
+            Elf gimbel = new Elf("Gimbel", 100, gimbelInventory);
 
             //Instancias para cada item
             Gear robe = new Gear("Robe", false);

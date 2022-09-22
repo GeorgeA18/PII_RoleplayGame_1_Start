@@ -1,5 +1,6 @@
 using System.Collections.Generic;
-public class Spellbook : IItem{
+namespace RPG;
+public class SpellBook : IItem{
     //Faltaría un método para mostrar los spells del libro
 
     public string Name {get; set;}
@@ -7,7 +8,7 @@ public class Spellbook : IItem{
     public int DefenseValue{get; set;}
     public bool Magic{get; set;}
 
-    public Spellbook(string Name, int AttackValue, int DefenseValue){
+    public SpellBook(string Name){
         this.Name=Name;
         //Con GetSpellBookAttack se itera sobre los hechizos de SpellBook para poder así calcular el poder de ataque del libro
         this.AttackValue=this.GetSpellBookAttack(); 
@@ -24,7 +25,7 @@ public class Spellbook : IItem{
         CharacterSpellBook.Remove(spell);
     }
 
-    int GetSpellBookAttack(){
+    public int GetSpellBookAttack(){
         int value=0;
         foreach(Spell spell in this.CharacterSpellBook){
             value+=spell.AttackValue;
@@ -32,7 +33,7 @@ public class Spellbook : IItem{
         return value;
     }
 
-    int GetSpellBookDefense(){
+    public int GetSpellBookDefense(){
         int value=0;
         foreach(Spell spell in this.CharacterSpellBook){
             value+=spell.DefenseValue;
