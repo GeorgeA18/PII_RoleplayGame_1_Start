@@ -22,7 +22,7 @@ public class Wizard : ICharacter{
 
         //Falta integrar el defense value
 
-        if (this.CharacterWeaponry.Contains(item))
+        if (this.Inventory.CharacterWeaponry.Contains(item))
         {
             if (character.Health > item.AttackValue + character.DefenseValue)
             {
