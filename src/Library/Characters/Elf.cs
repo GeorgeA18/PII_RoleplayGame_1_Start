@@ -7,14 +7,16 @@ public class Elf : ICharacter{
     public int Health{get;set;}
     public int AttackValue{get;}
     public int DefenseValue{get;}
+    public int DefaultCure{get;set;}
 
-    public Elf(string Name, int Health, Inventory inventory){
+    public Elf(string Name, int Health, Inventory inventory, int DefaultCure){
 
         this.Name=Name;
         this.Health = Health;
-        this.Inventory= Inventory;
+        this.Inventory= inventory;
         this.AttackValue = this.Inventory.GetAttackValue();
         this.DefenseValue = this.Inventory.GetDefenseValue();
+        this.DefaultCure = DefaultCure;
 
     } 
     public void Attack(ICharacter character, IItem item){
@@ -40,11 +42,8 @@ public class Elf : ICharacter{
         }
 
     }
-
-    public void Cure(){
-
-        this.Health = 100;
-
+    public void Cure(ICharacter character){
+        character.Health+=DefaultCure;
+        Console.WriteLine($"{this.Name} Cure {DefaultCure} and now their health is {Health}");
     }
-
-    }
+}

@@ -8,15 +8,17 @@ public class Dwarf : ICharacter{
     public int Health{get;set;}
     public int AttackValue{get;}
     public int DefenseValue{get;}
+    public int DefaultCure{get; set;}
+    
 
-    public Dwarf(string Name, int Health, Inventory inventory){
+    public Dwarf(string Name, int Health, Inventory inventory, int DefaultCure){
         
         this.Name=Name;
         this.Health = Health;
-        this.Inventory= new Inventory();
-        this.AttackValue = this.Inventory.GetAttackValue();
+        this.Inventory= inventory;
+        this.DefaultCure = DefaultCure;
         this.DefenseValue = this.Inventory.GetDefenseValue();
-
+        this.AttackValue = this.Inventory.GetAttackValue();
     } 
     public void Attack(ICharacter character, IItem item){
 
@@ -26,7 +28,7 @@ public class Dwarf : ICharacter{
         {
             if (character.Health > item.AttackValue + character.DefenseValue)
             {
-                character.Health -= item.AttackValue;
+                character.Health -= item.AttackValue - character.DefenseValue;
                 Console.WriteLine($"{this.Name} attacked {character.Name} with {item} and now their health decreased to {character.Health}.");
             }
             else
@@ -41,11 +43,8 @@ public class Dwarf : ICharacter{
         }
 
     }
-
-    public void Cure(){
-
-        this.Health = 100;
-
+    public void Cure(ICharacter character){
+        character.Health+= DefaultCure;
+        Console.WriteLine($"{this.Name} Cure {DefaultCure} and now their health is {Health}");
     }
-
-    }
+}

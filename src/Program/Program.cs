@@ -6,17 +6,24 @@ namespace RPG
     {
         static void Main(string[] args)
         {
-            //Instancias para cada personaje
             
+            //Instancias para cada personaje
+            // * Creando a un Wizard
             Inventory harryInventory = new Inventory();
             SpellBook harrySpellBook = new SpellBook("Harry's Spellbook");
-            Wizard harry = new Wizard("Harry", 100, harryInventory, harrySpellBook);
-            
-            Inventory gernisInventory = new Inventory();
-            Dwarf gernis = new Dwarf("Gernis", 100, gernisInventory);
+            Wizard harry = new Wizard("", 200, harryInventory, harrySpellBook,40);
 
+            harry.SubmitCharacter();
+/*
+            // * Creando a un Dwarf
+            Inventory gernisInventory = new Inventory();
+            Dwarf gernis = new Dwarf("Gernis", 100, gernisInventory, 60);
+
+            // * Creando a un Elf
             Inventory gimbelInventory = new Inventory();
-            Elf gimbel = new Elf("Gimbel", 100, gimbelInventory);
+            Elf gimbel = new Elf("Gimbel", 100, gimbelInventory, 40);
+
+            
 
             //Instancias para cada item
             Gear robe = new Gear("Robe", false);
@@ -39,7 +46,7 @@ namespace RPG
             DualItem spikedShield = new DualItem("Spiked Shield", 10, 20, false);
             DualItem wand = new DualItem("Wand", 20, 20, true);
             DualItem scepter = new DualItem("Scepter", 20, 20, true);
-
+*/
         }
     }
 }

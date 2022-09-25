@@ -9,14 +9,19 @@ public class Wizard : ICharacter{
     public int Health{get;set;}
     public int AttackValue{get;}
     public int DefenseValue{get;}
-    public Wizard(string Name, int Health, Inventory inventory, SpellBook spellBook){
+    public int DefaultCure{get; set;}
+    public int CureValue{get;set;}
+    public Wizard(string Name, int Health, Inventory inventory, SpellBook spellBook, int defaultCure){
 
-        this.Name= Name;
+        this.Name= Name.Trim();
         this.Health = Health;
-        this.Inventory= Inventory;
-        this.SpellBook = SpellBook;
+        this.Inventory= inventory;
+        this.SpellBook = spellBook;
+        this.DefaultCure = defaultCure;
+        this.CureValue = DefaultCure+this.SpellBook.GetSpellBookCure();
         this.AttackValue = this.Inventory.GetAttackValue() + this.SpellBook.GetSpellBookAttack();
         this.DefenseValue = this.Inventory.GetDefenseValue()+ this.SpellBook.GetSpellBookDefense();
+        this.ValidationAttributes();
     } 
     public void Attack(ICharacter character, IItem item){
 
@@ -42,11 +47,24 @@ public class Wizard : ICharacter{
 
     }
 
-    public void Cure(){
-
-        this.Health = 100;
-
+    public void Cure(ICharacter character){
+        character.Health=CureValue;
+        Console.WriteLine($"{this.Name} Cure {DefaultCure} and now their health is {Health}");
     }
 
+    public void ValidationAttributes()
+    {
+        Console.WriteLine("Validando...");
+        ValidationWizard Validator = new ValidationWizard(this);
+        Validator.ParameterReview();
+        Console.WriteLine("Se termino el Proceso de validación...");
     }
+
+    public void SubmitCharacter()
+    {
+        Console.WriteLine($"\nName: -|{this.Name}|-");
+        Console.WriteLine($"Health: -|{this.Health}|-");
+        
+    }
+}
     
