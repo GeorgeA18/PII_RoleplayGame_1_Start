@@ -29,9 +29,9 @@ public class Wizard : ICharacter{
 
         if (this.Inventory.CharacterWeaponry.Contains(item))
         {
-            if (character.Health > item.AttackValue + character.DefenseValue)
+            if (character.Health + character.DefenseValue > item.AttackValue )
             {
-                character.Health -= item.AttackValue;
+                character.Health -= (item.AttackValue-character.DefenseValue);
                 Console.WriteLine($"{this.Name} attacked {character.Name} with {item} and now their health decreased to {character.Health}.");
             }
             else
@@ -42,7 +42,7 @@ public class Wizard : ICharacter{
         }  
         else
         {
-            Console.WriteLine($"You do not have that item, dumb bitch!");
+            Console.WriteLine($"You do not have that item!");
         }
 
     }
