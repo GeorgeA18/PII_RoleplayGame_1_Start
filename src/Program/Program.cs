@@ -36,6 +36,17 @@ namespace RPG
             Bartolomeo.Inventory.AddWeaponry(spiritualShield);
             Bartolomeo.SubmitCharacter();
 
+
+            // * Creando a un Dwarf
+            Inventory bolsoninventory = new Inventory();
+            Dwarf bolson = new Dwarf("Bolson", 100, bolsoninventory, 60);
+            Protection woodenShield = new Protection("Wooden shield", 10);
+            Weapon silverSword = new Weapon("silver Sword", 30);
+            bolson.Inventory.AddWeaponry(silverSword);
+            bolson.Inventory.AddWeaponry(woodenShield);
+            bolson.SubmitCharacter();
+
+
             /*
             //Instancias para cada item
             Gear robe = new Gear("Robe", false);
