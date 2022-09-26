@@ -15,7 +15,7 @@ namespace Test.Library
             Elf Bartolomeo = new  Elf("Bartolomeo", Health, BartolomeoInventory, 40);
             Inventory gimliInventory= new Inventory();
             Dwarf gimli = new Dwarf("Gimli", 100, gimliInventory, 60);
-            Weapon battleAxe = new Weapon("Battle Axe", 30, false);
+            Weapon battleAxe = new Weapon("Battle Axe", 30);
             gimli.Inventory.AddWeaponry(battleAxe);
 
             gimli.Attack(Bartolomeo, battleAxe);
@@ -31,7 +31,7 @@ namespace Test.Library
             Elf Bartolomeo = new  Elf("Bartolomeo", Health, BartolomeoInventory, 40);
             Inventory gimliInventory= new Inventory();
             Dwarf gimli = new Dwarf("Gimli", 100, gimliInventory, 60);
-            Weapon battleAxe = new Weapon("Battle Axe", 30, false);
+            Weapon battleAxe = new Weapon("Battle Axe", 30);
             gimli.Inventory.AddWeaponry(battleAxe);
             
             gimli.Attack(Bartolomeo, battleAxe);

@@ -14,7 +14,7 @@ namespace Test.Library
             Inventory harryInventory = new Inventory();
             SpellBook harrySpellBook = new SpellBook("Harry's Spellbook");
             Wizard harry = new Wizard("harry", 100, harryInventory, harrySpellBook, 40);
-            Weapon MagicStick = new Weapon("Magic Stick", 40, true);
+            Weapon MagicStick = new Weapon("Magic Stick", 40);
             harry.Inventory.AddWeaponry(MagicStick);
             Inventory BartolomeoInventory = new Inventory();
             Elf Bartolomeo = new  Elf("Bartolomeo", Health, BartolomeoInventory, 40);
@@ -32,7 +32,7 @@ namespace Test.Library
             Inventory harryInventory = new Inventory();
             SpellBook harrySpellBook = new SpellBook("Harry's Spellbook");
             Wizard harry = new Wizard("harry", 100, harryInventory, harrySpellBook, 40);
-            Weapon MagicStick = new Weapon("Magic Stick", 40, true);
+            Weapon MagicStick = new Weapon("Magic Stick", 40);
             harry.Inventory.AddWeaponry(MagicStick);
             Inventory BartolomeoInventory = new Inventory();
             Elf Bartolomeo = new  Elf("Bartolomeo", Health, BartolomeoInventory, 40);

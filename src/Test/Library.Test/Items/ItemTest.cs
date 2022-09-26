@@ -10,7 +10,7 @@ namespace Test.Library
         public void UntrimedName(){
             const string untrimedName = "  Daga  ";
             const string expectedName = "Daga";
-            Weapon daga = new Weapon(untrimedName, 10, false);
+            Weapon daga = new Weapon(untrimedName, 10);
             Assert.That(expectedName, Is.EqualTo(daga.Name));
         }
 
@@ -18,7 +18,7 @@ namespace Test.Library
         public void ValidNameweapon(){
             const string untrimedName = "  ";
             const string expectedName = "Arma";
-            Weapon daga = new Weapon(untrimedName, 10, false);
+            Weapon daga = new Weapon(untrimedName, 10);
             Assert.That(expectedName, Is.EqualTo(daga.Name));
         }
 
@@ -26,7 +26,7 @@ namespace Test.Library
         public void ValidNameProtection(){
             const string untrimedName = "  ";
             const string expectedName = "Protección";
-            Protection prot = new Protection(untrimedName, 10, false);
+            Protection prot = new Protection(untrimedName, 10);
             Assert.That(expectedName, Is.EqualTo(prot.Name));
         }
 
@@ -34,7 +34,7 @@ namespace Test.Library
         public void ValidNameDualItem(){
             const string untrimedName = "  ";
             const string expectedName = "Dual Item";
-            DualItem dual = new DualItem(untrimedName, 10, 10, false);
+            DualItem dual = new DualItem(untrimedName, 10, 10);
             Assert.That(expectedName, Is.EqualTo(dual.Name));
         }
 
@@ -50,7 +50,7 @@ namespace Test.Library
         public void ValidNameGear(){
             const string untrimedName = "  ";
             const string expectedName = "Ropaje";
-            Gear gear = new Gear(untrimedName, false);
+            Gear gear = new Gear(untrimedName);
             Assert.That(expectedName, Is.EqualTo(gear.Name));
         }
 

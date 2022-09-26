@@ -14,7 +14,7 @@ namespace Test.Library{
             Wizard harry = new Wizard("harry", Health, harryInventory, harrySpellBook, 40);
             Inventory BartolomeoInventory = new Inventory();
             Elf Bartolomeo = new  Elf("Bartolomeo", 100, BartolomeoInventory, 40);
-            Weapon spiritualDagger = new Weapon("Spiritual Dagger", 40, false);
+            Weapon spiritualDagger = new Weapon("Spiritual Dagger", 40);
             Bartolomeo.Inventory.AddWeaponry(spiritualDagger);
 
             Bartolomeo.Attack(harry, spiritualDagger);
@@ -31,7 +31,7 @@ namespace Test.Library{
             Wizard harry = new Wizard("harry", Health, harryInventory, harrySpellBook, 40);
             Inventory BartolomeoInventory = new Inventory();
             Elf Bartolomeo = new  Elf("Bartolomeo", 100, BartolomeoInventory, 40);
-            Weapon spiritualDagger = new Weapon("Spiritual Dagger", 40, false);
+            Weapon spiritualDagger = new Weapon("Spiritual Dagger", 40);
             Bartolomeo.Inventory.AddWeaponry(spiritualDagger);
 
             
