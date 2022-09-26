@@ -1,4 +1,7 @@
-using RPG;
+
+
+namespace RPG;
+
 public interface IValidationCharacters
 {
     ICharacter Character{get;set;}

@@ -1,3 +1,6 @@
+
+namespace RPG;
+
 public interface IMagicItem{
     string Name {get; set;}
     int AttackValue {get; set;}

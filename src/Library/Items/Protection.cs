@@ -1,3 +1,6 @@
+
+namespace RPG;
+
 public class Protection : IItem{
     public string Name {get; set;}
     public int AttackValue{get; set;}
