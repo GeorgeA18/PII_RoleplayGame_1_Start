@@ -54,10 +54,8 @@ public class Wizard : ICharacter{
 
     public void ValidationAttributes()
     {
-        Console.WriteLine("Validando...");
-        ValidationWizard Validator = new ValidationWizard(this);
+        ValidationCharacter Validator = new ValidationCharacter(this);
         Validator.ParameterReview();
-        Console.WriteLine("Se termino el Proceso de validación...");
     }
 
     public void SubmitCharacter()

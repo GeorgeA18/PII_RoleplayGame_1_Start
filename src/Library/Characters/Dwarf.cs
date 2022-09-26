@@ -19,6 +19,7 @@ public class Dwarf : ICharacter{
         this.DefaultCure = DefaultCure;
         this.DefenseValue = this.Inventory.GetDefenseValue();
         this.AttackValue = this.Inventory.GetAttackValue();
+        this.ValidationAttributes();
     } 
     public void Attack(ICharacter character, IItem item){
 
@@ -56,5 +57,9 @@ public class Dwarf : ICharacter{
         
     }
 
-
+    public void ValidationAttributes()
+    {
+        ValidationCharacter Validator = new ValidationCharacter(this);
+        Validator.ParameterReview();
+    }
 }

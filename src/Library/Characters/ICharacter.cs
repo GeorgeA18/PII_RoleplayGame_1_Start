@@ -11,7 +11,7 @@ public interface ICharacter{
     int DefaultCure{get;set;}
     void Attack(ICharacter character, IItem Item);
     void Cure(ICharacter character);
-    
     void SubmitCharacter();
+    void ValidationAttributes();
 
 }

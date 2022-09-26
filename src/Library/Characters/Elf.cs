@@ -17,7 +17,7 @@ public class Elf : ICharacter{
         this.AttackValue = this.Inventory.GetAttackValue();
         this.DefenseValue = this.Inventory.GetDefenseValue();
         this.DefaultCure = DefaultCure;
-
+        this.ValidationAttributes();
     } 
     public void Attack(ICharacter character, IItem item){
 
@@ -45,6 +45,12 @@ public class Elf : ICharacter{
     public void Cure(ICharacter character){
         character.Health+=DefaultCure;
         Console.WriteLine($"{this.Name} Cure {DefaultCure} and now their health is {Health}");
+    }
+
+    public void ValidationAttributes()
+    {
+        ValidationCharacter Validator = new ValidationCharacter(this);
+        Validator.ParameterReview();
     }
 
     public void SubmitCharacter()
