@@ -25,7 +25,7 @@ public class Wizard : ICharacter{
     } 
     public void Attack(ICharacter character, IItem item){
 
-        //Falta integrar el defense value
+
 
         if (this.Inventory.CharacterWeaponry.Contains(item))
         {

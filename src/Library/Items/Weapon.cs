@@ -6,9 +6,15 @@ public class Weapon : IItem{
 
     //Las armas puras solo atacan, por eso su valor de defensa es siempre 0 
     public Weapon(string Name, int AttackValue, bool Magic){
-        this.Name=Name;
+        this.Name=Name.Trim();
         this.AttackValue=AttackValue;
         this.DefenseValue=0;
         this.Magic=Magic;
+        NombreDefault();
+    }
+    public void NombreDefault(){
+        if(string.IsNullOrEmpty(this.Name)){
+            this.Name="Arma";
+        }
     }
 }

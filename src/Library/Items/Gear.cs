@@ -6,9 +6,16 @@ public class Gear : IItem{
 
     //El ropaje no se usa para atacar ni ara defender, son simpemente accesorios. Por eso sus valores son de 0
     public Gear(string Name, bool Magic){
-        this.Name=Name;
+        this.Name=Name.Trim();
         this.AttackValue=0;
         this.DefenseValue=0;
         this.Magic=Magic;
+        NombreDefault();
+    }
+
+    public void NombreDefault(){
+        if(string.IsNullOrEmpty(this.Name)){
+            this.Name="Ropaje";
+        }
     }
 }
