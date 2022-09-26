@@ -49,7 +49,7 @@ public class Wizard : ICharacter{
 
     public void Cure(ICharacter character){
         character.Health=CureValue;
-        Console.WriteLine($"{this.Name} Cure {DefaultCure} and now their health is {Health}");
+        Console.WriteLine($"{this.Name} Cure {DefaultCure} and now their health is {character.Health}");
     }
 
     public void ValidationAttributes()

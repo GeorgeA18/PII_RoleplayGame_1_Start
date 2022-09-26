@@ -11,7 +11,9 @@ namespace RPG
             // * Creando a un Wizard
             Inventory harryInventory = new Inventory();
             SpellBook harrySpellBook = new SpellBook("Harry's Spellbook");
-            Wizard harry = new Wizard("Harry", 200, harryInventory, harrySpellBook,40);
+            Wizard harry = new Wizard("Harry", 100, harryInventory, harrySpellBook,25);
+            Weapon MagicStick = new Weapon("Magic Stick", 40, true);
+            harry.Inventory.AddWeaponry(MagicStick);
 
             harry.SubmitCharacter();
 
@@ -24,13 +26,17 @@ namespace RPG
             gimli.Inventory.AddWeaponry(roundedShield);
             gimli.SubmitCharacter();
 
-            /*
-            // * Creando a un Elf
-            Inventory gimbelInventory = new Inventory();
-            Elf gimbel = new Elf("Gimbel", 100, gimbelInventory, 40);
-
             
+            // * Creando a un Elf
+            Inventory BartolomeoInventory = new Inventory();
+            Elf Bartolomeo = new  Elf("Bartolomeo", 100, BartolomeoInventory, 30);
+            Protection spiritualShield = new Protection("Spiritual shield", 10, false);
+            Weapon spiritualDagger = new Weapon("Spiritual Dagger", 40, false);
+            Bartolomeo.Inventory.AddWeaponry(spiritualDagger);
+            Bartolomeo.Inventory.AddWeaponry(spiritualShield);
+            Bartolomeo.SubmitCharacter();
 
+            /*
             //Instancias para cada item
             Gear robe = new Gear("Robe", false);
             Gear gown = new Gear("Gown", false);

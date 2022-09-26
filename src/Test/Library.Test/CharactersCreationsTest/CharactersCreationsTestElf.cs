@@ -54,7 +54,7 @@ namespace Test.Library
 
             Inventory harryInventory = new Inventory();
              
-             Elf harry = new  Elf("harry", health, harryInventory, 40);
+            Elf harry = new  Elf("harry", health, harryInventory, 40);
 
             Assert.That(expected, Is.EqualTo(harry.Health));
 
