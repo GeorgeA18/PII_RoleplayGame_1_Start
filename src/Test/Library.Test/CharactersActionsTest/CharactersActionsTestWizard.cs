@@ -21,7 +21,7 @@ namespace Test.Library
 
             Assert.That(nameExpected, Is.EqualTo(harry.Name));
 
-            Assert.Pass("Paso la prueba 1 de Name.");
+            Assert.Pass("Paso la prueba 1 de nombre.");
         }
 
         [Test]
@@ -41,7 +41,7 @@ namespace Test.Library
             Assert.That(nameExpected, Is.EqualTo(brian.Name));
 
 
-            Assert.Pass("Paso la prueba 2 de Name.");
+            Assert.Pass("Pasó la prueba 2 de nombre.");
         }
 
 
@@ -59,7 +59,7 @@ namespace Test.Library
 
             Assert.That(expected, Is.EqualTo(harry.Health));
 
-            Assert.Pass("Paso la prueba 1 de Health.");
+            Assert.Pass("Pasó la prueba 1 de vida.");
         }
 
         // * Caso de prueba para el Health invalido.
@@ -80,7 +80,7 @@ namespace Test.Library
             Assert.That(expected, Is.EqualTo(brian.Health));
 
 
-            Assert.Pass("Paso la prueba 2 de Health.");
+            Assert.Pass("Pasó la prueba 2 de vida.");
         }
 
 
@@ -98,7 +98,7 @@ namespace Test.Library
 
             Assert.That(expected, Is.EqualTo(harry.DefaultCure));
 
-            Assert.Pass("Paso la prueba 1 de cure.");
+            Assert.Pass("Pasó la prueba 1 de cura.");
         }
 
         // * Caso de prueba para el DefaultCure invalido.
@@ -119,7 +119,7 @@ namespace Test.Library
             Assert.That(expected, Is.EqualTo(brian.DefaultCure));
 
 
-            Assert.Pass("Paso la prueba 2 de Cure.");
+            Assert.Pass("Pasó la prueba 2 de cura.");
         }
     }
 }
