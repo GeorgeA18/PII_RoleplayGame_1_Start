@@ -57,19 +57,6 @@ public class Wizard : ICharacter{
                 Console.WriteLine($"{this.Name} attacked {character.Name} with {nombreHechizo} and killed them.");
             }
     }
-
-    public void MagicCure(ICharacter character, int numHechizo){
-        int valorCura=this.SpellBook.CharacterSpellBook[numHechizo].CureValue;
-        if(character.Health+valorCura < 100){
-            character.Health+=valorCura;
-            Console.WriteLine($"{this.Name} Cure {valorCura} and now their health is {character.Health}");
-        }
-        else
-        {
-            character.Health=100;
-        }
-    }
-
     public void Cure(ICharacter character){
         if(character.Health+CureValue < 100){
             character.Health+=CureValue;
