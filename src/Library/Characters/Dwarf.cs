@@ -47,4 +47,14 @@ public class Dwarf : ICharacter{
         character.Health+= DefaultCure;
         Console.WriteLine($"{this.Name} Cure {DefaultCure} and now their health is {Health}");
     }
+
+    public void SubmitCharacter()
+    {
+        Console.WriteLine($"\nName: -|{this.Name}|-");
+        Console.WriteLine($"Health: -|{this.Health}|-");
+        Console.WriteLine("-|Dwarf|-");
+        
+    }
+
+
 }

@@ -11,8 +11,7 @@ public interface ICharacter{
     int DefaultCure{get;set;}
     void Attack(ICharacter character, IItem Item);
     void Cure(ICharacter character);
-
-    // Metodo para presentar la infromación de personaje.
-    // void SubmitCharacter();
+    
+    void SubmitCharacter();
 
 }

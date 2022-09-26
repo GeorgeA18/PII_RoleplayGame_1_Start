@@ -11,14 +11,20 @@ namespace RPG
             // * Creando a un Wizard
             Inventory harryInventory = new Inventory();
             SpellBook harrySpellBook = new SpellBook("Harry's Spellbook");
-            Wizard harry = new Wizard("", 200, harryInventory, harrySpellBook,40);
+            Wizard harry = new Wizard("Harry", 200, harryInventory, harrySpellBook,40);
 
             harry.SubmitCharacter();
-/*
-            // * Creando a un Dwarf
-            Inventory gernisInventory = new Inventory();
-            Dwarf gernis = new Dwarf("Gernis", 100, gernisInventory, 60);
 
+            // * Creando a un Dwarf
+            Inventory gimliInventory= new Inventory();
+            Dwarf gimli = new Dwarf("Gimli", 100, gimliInventory, 60);
+            Protection roundedShield = new Protection("Rounded shield", 20, false);
+            Weapon battleAxe = new Weapon("Battle Axe", 30, false);
+            gimli.Inventory.AddWeaponry(battleAxe);
+            gimli.Inventory.AddWeaponry(roundedShield);
+            gimli.SubmitCharacter();
+
+            /*
             // * Creando a un Elf
             Inventory gimbelInventory = new Inventory();
             Elf gimbel = new Elf("Gimbel", 100, gimbelInventory, 40);

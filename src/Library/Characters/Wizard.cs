@@ -64,7 +64,7 @@ public class Wizard : ICharacter{
     {
         Console.WriteLine($"\nName: -|{this.Name}|-");
         Console.WriteLine($"Health: -|{this.Health}|-");
-        
+        Console.WriteLine("-|Wizard|-");
     }
 }
     
