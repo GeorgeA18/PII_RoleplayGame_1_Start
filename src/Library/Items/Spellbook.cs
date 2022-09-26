@@ -9,7 +9,6 @@ public class SpellBook : IItem{
     public int AttackValue{get; set;}
     public int DefenseValue{get; set;}
     public int CureValue{get;set;}
-    public bool Magic{get; set;}
     public List<Spell> CharacterSpellBook = new List<Spell>();
 
     public SpellBook(string Name){
@@ -19,7 +18,6 @@ public class SpellBook : IItem{
         //Idem que con el ataque, pero para la defensa
         this.DefenseValue=this.GetSpellBookDefense();
         this.CureValue=this.GetSpellBookCure();
-        this.Magic=true; //Como el spellbook es un ítem mágico por defecto, Magic siempre es true
         NombreDefault();
         }
 

@@ -22,21 +22,15 @@ public class Elf : ICharacter{
     public void Attack(ICharacter character, IItem item){
         if (this.Inventory.CharacterWeaponry.Contains(item))
         {
-            if(!item.Magic){
-                if (character.Health + character.DefenseValue > item.AttackValue )
-                {
-                    character.Health -= (item.AttackValue-character.DefenseValue);
-                    Console.WriteLine($"{this.Name} attacked {character.Name} with {item} and now their health decreased to {character.Health}.");
-                }
-                else
-                {
-                    character.Health = 0;
-                    Console.WriteLine($"{this.Name} attacked {character.Name} with {item} and killed them.");
-                }
-            } 
+            if (character.Health + character.DefenseValue > item.AttackValue )
+            {
+                character.Health -= (item.AttackValue-character.DefenseValue);
+                Console.WriteLine($"{this.Name} attacked {character.Name} with {item} and now their health decreased to {character.Health}.");
+            }
             else
             {
-                Console.WriteLine("This is a magic item!");
+                character.Health = 0;
+                Console.WriteLine($"{this.Name} attacked {character.Name} with {item} and killed them.");
             }
         }  
         else

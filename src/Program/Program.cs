@@ -12,7 +12,7 @@ namespace RPG
             Inventory harryInventory = new Inventory();
             SpellBook harrySpellBook = new SpellBook("Harry's Spellbook");
             Wizard harry = new Wizard("Harry", 100, harryInventory, harrySpellBook,25);
-            Weapon MagicStick = new Weapon("Magic Stick", 40, true);
+            Weapon MagicStick = new Weapon("Magic Stick", 40);
             harry.Inventory.AddWeaponry(MagicStick);
 
             harry.SubmitCharacter();
@@ -20,8 +20,8 @@ namespace RPG
             // * Creando a un Dwarf
             Inventory gimliInventory= new Inventory();
             Dwarf gimli = new Dwarf("Gimli", 100, gimliInventory, 60);
-            Protection roundedShield = new Protection("Rounded shield", 20, false);
-            Weapon battleAxe = new Weapon("Battle Axe", 30, false);
+            Protection roundedShield = new Protection("Rounded shield", 20);
+            Weapon battleAxe = new Weapon("Battle Axe", 30);
             gimli.Inventory.AddWeaponry(battleAxe);
             gimli.Inventory.AddWeaponry(roundedShield);
             gimli.SubmitCharacter();
@@ -30,8 +30,8 @@ namespace RPG
             // * Creando a un Elf
             Inventory BartolomeoInventory = new Inventory();
             Elf Bartolomeo = new  Elf("Bartolomeo", 100, BartolomeoInventory, 30);
-            Protection spiritualShield = new Protection("Spiritual shield", 10, false);
-            Weapon spiritualDagger = new Weapon("Spiritual Dagger", 40, false);
+            Protection spiritualShield = new Protection("Spiritual shield", 10);
+            Weapon spiritualDagger = new Weapon("Spiritual Dagger", 40);
             Bartolomeo.Inventory.AddWeaponry(spiritualDagger);
             Bartolomeo.Inventory.AddWeaponry(spiritualShield);
             Bartolomeo.SubmitCharacter();
