@@ -5,7 +5,7 @@ using RPG;
 namespace Test.Library
 {
     // Todo: Estos tests se encarngan de verificar los atributos pasado como parametros en  la creación del personaje.
-    public class WizardCreationTest
+    public class DwarfCreationTest
     {
 
         // TODO: Casos de prueba para el atributo Name
@@ -16,8 +16,7 @@ namespace Test.Library
             const string nameExpected = "harry";
 
             Inventory harryInventory = new Inventory();
-            SpellBook harrySpellBook = new SpellBook("Harry's Spellbook");
-            Wizard harry = new Wizard(nameValid, 100, harryInventory, harrySpellBook, 40);
+            Dwarf harry = new Dwarf(nameValid, 100, harryInventory, 40);
 
             Assert.That(nameExpected, Is.EqualTo(harry.Name));
 
@@ -32,12 +31,12 @@ namespace Test.Library
             const string nameExpected = "Sin Nombre";
 
             Inventory harryInventory = new Inventory();
-            SpellBook harrySpellBook = new SpellBook("Harry's Spellbook");
-            Wizard harry = new Wizard(nameWrong1, 100, harryInventory, harrySpellBook, 40);
+             
+            Dwarf harry = new Dwarf(nameWrong1, 100, harryInventory, 40);
 
             Assert.That(nameExpected, Is.EqualTo(harry.Name));
 
-            Wizard brian = new Wizard(nameWrong2, 100, harryInventory, harrySpellBook, 40);
+            Dwarf brian = new Dwarf(nameWrong2, 100, harryInventory, 40);
             Assert.That(nameExpected, Is.EqualTo(brian.Name));
 
 
@@ -54,8 +53,8 @@ namespace Test.Library
             const int expected = 100;
 
             Inventory harryInventory = new Inventory();
-            SpellBook harrySpellBook = new SpellBook("Harry's Spellbook");
-            Wizard harry = new Wizard("harry", health, harryInventory, harrySpellBook, 40);
+             
+            Dwarf harry = new Dwarf("harry", health, harryInventory, 40);
 
             Assert.That(expected, Is.EqualTo(harry.Health));
 
@@ -71,12 +70,12 @@ namespace Test.Library
             const int expected = 100;
 
             Inventory harryInventory = new Inventory();
-            SpellBook harrySpellBook = new SpellBook("Harry's Spellbook");
-            Wizard harry = new Wizard("harry", healthWrong1, harryInventory, harrySpellBook, 40);
+             
+            Dwarf harry = new Dwarf("harry", healthWrong1, harryInventory, 40);
 
             Assert.That(expected, Is.EqualTo(harry.Health));
 
-            Wizard brian = new Wizard("brian", healthWrong2, harryInventory, harrySpellBook, 40);
+            Dwarf brian = new Dwarf("brian", healthWrong2, harryInventory, 40);
             Assert.That(expected, Is.EqualTo(brian.Health));
 
 
@@ -93,8 +92,8 @@ namespace Test.Library
             const int expected = 40;
 
             Inventory harryInventory = new Inventory();
-            SpellBook harrySpellBook = new SpellBook("Harry's Spellbook");
-            Wizard harry = new Wizard("harry", 100, harryInventory, harrySpellBook, cure);
+             
+            Dwarf harry = new Dwarf("harry", 100, harryInventory, cure);
 
             Assert.That(expected, Is.EqualTo(harry.DefaultCure));
 
@@ -110,12 +109,12 @@ namespace Test.Library
             const int expected = 50;
 
             Inventory harryInventory = new Inventory();
-            SpellBook harrySpellBook = new SpellBook("Harry's Spellbook");
-            Wizard harry = new Wizard("harry", 100, harryInventory, harrySpellBook, cureWrong1);
+             
+            Dwarf harry = new Dwarf("harry", 100, harryInventory, cureWrong1);
 
             Assert.That(expected, Is.EqualTo(harry.DefaultCure));
 
-            Wizard brian = new Wizard("brian", 100, harryInventory, harrySpellBook, cureWrong2);
+            Dwarf brian = new Dwarf("brian", 100, harryInventory, cureWrong2);
             Assert.That(expected, Is.EqualTo(brian.DefaultCure));
 
 
