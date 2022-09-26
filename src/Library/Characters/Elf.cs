@@ -11,7 +11,7 @@ public class Elf : ICharacter{
 
     public Elf(string Name, int Health, Inventory inventory, int DefaultCure){
 
-        this.Name=Name;
+        this.Name=Name.Trim();
         this.Health = Health;
         this.Inventory= inventory;
         this.AttackValue = this.Inventory.GetAttackValue();
@@ -20,20 +20,23 @@ public class Elf : ICharacter{
         this.ValidationAttributes();
     } 
     public void Attack(ICharacter character, IItem item){
-
-        //Falta integrar el defense value
-
         if (this.Inventory.CharacterWeaponry.Contains(item))
         {
-            if (character.Health + character.DefenseValue > item.AttackValue )
-            {
-                character.Health -= (item.AttackValue-character.DefenseValue);
-                Console.WriteLine($"{this.Name} attacked {character.Name} with {item} and now their health decreased to {character.Health}.");
-            }
+            if(!item.Magic){
+                if (character.Health + character.DefenseValue > item.AttackValue )
+                {
+                    character.Health -= (item.AttackValue-character.DefenseValue);
+                    Console.WriteLine($"{this.Name} attacked {character.Name} with {item} and now their health decreased to {character.Health}.");
+                }
+                else
+                {
+                    character.Health = 0;
+                    Console.WriteLine($"{this.Name} attacked {character.Name} with {item} and killed them.");
+                }
+            } 
             else
             {
-                character.Health = 0;
-                Console.WriteLine($"{this.Name} attacked {character.Name} with {item} and killed them.");
+                Console.WriteLine("This is a magic item!");
             }
         }  
         else

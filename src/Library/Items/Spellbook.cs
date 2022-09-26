@@ -13,13 +13,20 @@ public class SpellBook : IItem{
     public List<Spell> CharacterSpellBook = new List<Spell>();
 
     public SpellBook(string Name){
-        this.Name=Name;
+        this.Name=Name.Trim();
         //Con GetSpellBookAttack se itera sobre los hechizos de SpellBook para poder así calcular el poder de ataque del libro
         this.AttackValue=this.GetSpellBookAttack(); 
         //Idem que con el ataque, pero para la defensa
         this.DefenseValue=this.GetSpellBookDefense();
         this.CureValue=this.GetSpellBookCure();
         this.Magic=true; //Como el spellbook es un ítem mágico por defecto, Magic siempre es true
+        NombreDefault();
+        }
+
+    public void NombreDefault(){
+        if(string.IsNullOrEmpty(this.Name)){
+            this.Name="Libro de hechizos";
+        }
     }
 
     void AddSpell(Spell spell){

@@ -6,9 +6,16 @@ public class DualItem : IItem{
 
     //Los ítems duales pueden tanto atacar como defender, por eso ambas variables pueden ser accedidas al momento de instanciarse
     public DualItem(string Name, int AttackValue, int DefenseValue, bool Magic){
-        this.Name=Name;
+        this.Name=Name.Trim();
         this.AttackValue=AttackValue;
         this.DefenseValue=DefenseValue;
         this.Magic=Magic;
+        NombreDefault();
+    }
+
+    public void NombreDefault(){
+        if(string.IsNullOrEmpty(this.Name)){
+            this.Name="Dual Item";
+        }
     }
 }
