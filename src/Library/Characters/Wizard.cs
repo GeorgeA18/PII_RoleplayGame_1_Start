@@ -24,9 +24,6 @@ public class Wizard : ICharacter{
         this.ValidationAttributes();
     } 
     public void Attack(ICharacter character, IItem item){
-
-
-
         if (this.Inventory.CharacterWeaponry.Contains(item))
         {
             if (character.Health + character.DefenseValue > item.AttackValue )
@@ -44,12 +41,44 @@ public class Wizard : ICharacter{
         {
             Console.WriteLine($"You do not have that item!");
         }
+    }
 
+    public void MagicAttack(ICharacter character, int numHechizo){
+        int dañoHechizo=this.SpellBook.CharacterSpellBook[numHechizo].AttackValue;
+        string nombreHechizo= this.SpellBook.CharacterSpellBook[numHechizo].Name;
+        if (character.Health + character.DefenseValue > dañoHechizo)
+            {
+                character.Health -= (dañoHechizo-character.DefenseValue);
+                Console.WriteLine($"{this.Name} attacked {character.Name} with {nombreHechizo} and now their health decreased to {character.Health}.");
+            }
+            else
+            {
+                character.Health = 0;
+                Console.WriteLine($"{this.Name} attacked {character.Name} with {nombreHechizo} and killed them.");
+            }
+    }
+
+    public void MagicCure(ICharacter character, int numHechizo){
+        int valorCura=this.SpellBook.CharacterSpellBook[numHechizo].CureValue;
+        if(character.Health+valorCura < 100){
+            character.Health+=valorCura;
+            Console.WriteLine($"{this.Name} Cure {valorCura} and now their health is {character.Health}");
+        }
+        else
+        {
+            character.Health=100;
+        }
     }
 
     public void Cure(ICharacter character){
-        character.Health=CureValue;
-        Console.WriteLine($"{this.Name} Cure {DefaultCure} and now their health is {Health}");
+        if(character.Health+CureValue < 100){
+            character.Health+=CureValue;
+            Console.WriteLine($"{this.Name} Cure {DefaultCure} and now their health is {character.Health}");
+        }
+        else
+        {
+            character.Health=100;
+        }
     }
 
     public void ValidationAttributes()

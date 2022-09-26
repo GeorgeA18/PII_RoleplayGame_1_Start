@@ -48,8 +48,14 @@ public class Dwarf : ICharacter{
 
     }
     public void Cure(ICharacter character){
-        character.Health+= DefaultCure;
-        Console.WriteLine($"{this.Name} Cure {DefaultCure} and now their health is {Health}");
+        if(character.Health+DefaultCure < 100){
+            character.Health+=DefaultCure;
+            Console.WriteLine($"{this.Name} Cure {DefaultCure} and now their health is {character.Health}");
+        }
+        else
+        {
+            character.Health=100;
+        }
     }
 
     public void SubmitCharacter()
