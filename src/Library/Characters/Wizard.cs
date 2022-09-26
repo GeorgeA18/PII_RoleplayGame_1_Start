@@ -25,7 +25,7 @@ public class Wizard : ICharacter{
     } 
     public void Attack(ICharacter character, IItem item){
 
-
+        //Falta integrar el defense value
 
         if (this.Inventory.CharacterWeaponry.Contains(item))
         {
@@ -49,7 +49,7 @@ public class Wizard : ICharacter{
 
     public void Cure(ICharacter character){
         character.Health=CureValue;
-        Console.WriteLine($"{this.Name} Cure {DefaultCure} and now their health is {character.Health}");
+        Console.WriteLine($"{this.Name} Cure {DefaultCure} and now their health is {Health}");
     }
 
     public void ValidationAttributes()

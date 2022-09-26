@@ -5,7 +5,7 @@ using RPG;
 namespace Test.Library
 {
     // Todo: Estos tests se encarngan de verificar los atributos pasado como parametros en  la creación del personaje.
-    public class WizardActionsfTest
+    public class WizardActionsTest
     {
         [Test]
         public void ValidActionAtack()
@@ -52,6 +52,19 @@ namespace Test.Library
             
             harry.Cure(harry);
             Assert.That(cure+Health, Is.EqualTo(harry.Health));
+        }
+
+        [Test]
+        public void IncorrectActionCure()
+        {
+            int cure=40;
+            int maxHealth=100;
+            Inventory harryInventory = new Inventory();
+            SpellBook harrySpellBook = new SpellBook("Harry's Spellbook");
+            Wizard harry = new Wizard("harry", 100, harryInventory, harrySpellBook, cure);
+            
+            harry.Cure(harry);
+            Assert.That(harry.Health, Is.EqualTo(maxHealth));
         }
     }
 }
