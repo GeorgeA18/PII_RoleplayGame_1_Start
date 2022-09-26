@@ -1,3 +1,6 @@
+
+namespace RPG;
+
 public class WizardItem : IMagicItem{
     public string Name {get; set;}
     public int AttackValue {get; set;}

@@ -4,14 +4,16 @@ namespace RPG;
 
 public interface IEquipment
 {
-    ICharacter character { get; set; }
+    public ICharacter Character { get; set; }
     // Para armas y equipamiento en las manos.
-    IItem rightArm { get; set; }
-    IItem LeftArm { get; set; }
+    public IItem RightArm { get; set; }
+    public IItem LeftArm { get; set; }
 
     // Para la armadura y protección.
-    IItem armor { get; set; }
+    public Protection Armor { get; set; }
 
-    void reghtArmEquip();
+    void EquipRightArm(IItem weapon);
+    void EquipLeftArm(IItem weapon);
+    void EquipArmor(Protection armor);
 
 }
