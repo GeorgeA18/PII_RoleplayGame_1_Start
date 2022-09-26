@@ -65,8 +65,10 @@ public class SpellBook : IItem{
 
         Console.WriteLine($"{wizard.Name}'s SPELLBOOK SUMMARY");
         Console.WriteLine("Spells list:");
+        byte contador=0;
         foreach(Spell spell in this.CharacterSpellBook){
-            Console.WriteLine($"{spell} | Attack : {spell.AttackValue} | Defense : {spell.DefenseValue} | Cure : {spell.CureValue}");
+            Console.WriteLine($"{spell} : N°{contador} | Attack : {spell.AttackValue} | Defense : {spell.DefenseValue} | Cure : {spell.CureValue}");
+            contador++;
         }
 
     }
