@@ -11,7 +11,7 @@ public class Wizard : ICharacter{
     public int DefenseValue{get;}
     public int DefaultCure{get; set;}
     public int CureValue{get;set;}
-    public Wizard(string Name, int Health, Inventory inventory, SpellBook spellBook, int defaultCure){
+    public Wizard(string Name, int Health, Inventory inventory, SpellBook spellBook,int defaultCure){
 
         this.Name= Name.Trim();
         this.Health = Health;
@@ -73,7 +73,7 @@ public class Wizard : ICharacter{
         ValidationCharacter Validator = new ValidationCharacter(this);
         Validator.ParameterReview();
     }
-
+    
     public void SubmitCharacter()
     {
         Console.WriteLine($"\nName: -|{this.Name}|-");

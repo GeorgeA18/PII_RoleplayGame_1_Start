@@ -6,46 +6,50 @@ namespace RPG
     {
         static void Main(string[] args)
         {
-            
+
             //Instancias para cada personaje
-            // * Creando a un Wizard
-            Inventory harryInventory = new Inventory();
+            // * Creando a un Wizard.
+            Equipment harryEquipment = new Equipment();
+            Inventory harryInventory = new Inventory(harryEquipment);
             SpellBook harrySpellBook = new SpellBook("Harry's Spellbook");
-            Wizard harry = new Wizard("Harry", 100, harryInventory, harrySpellBook,25);
+            Wizard harry = new Wizard("Harry", 100, harryInventory, harrySpellBook, 25);
+
             Weapon MagicStick = new Weapon("Magic Stick", 40);
             harry.Inventory.AddWeaponry(MagicStick);
+            harry.Inventory.EquipRightArm(MagicStick);
 
             harry.SubmitCharacter();
-
-            // * Creando a un Dwarf
-            Inventory gimliInventory= new Inventory();
-            Dwarf gimli = new Dwarf("Gimli", 100, gimliInventory, 60);
-            Protection roundedShield = new Protection("Rounded shield", 20);
-            Weapon battleAxe = new Weapon("Battle Axe", 30);
-            gimli.Inventory.AddWeaponry(battleAxe);
-            gimli.Inventory.AddWeaponry(roundedShield);
-            gimli.SubmitCharacter();
-
             
-            // * Creando a un Elf
-            Inventory BartolomeoInventory = new Inventory();
-            Elf Bartolomeo = new  Elf("Bartolomeo", 100, BartolomeoInventory, 30);
-            Protection spiritualShield = new Protection("Spiritual shield", 10);
-            Weapon spiritualDagger = new Weapon("Spiritual Dagger", 40);
-            Bartolomeo.Inventory.AddWeaponry(spiritualDagger);
-            Bartolomeo.Inventory.AddWeaponry(spiritualShield);
-            Bartolomeo.SubmitCharacter();
+            /*
+                        // * Creando a un Dwarf.
+                        Inventory gimliInventory= new Inventory();
+                        Dwarf gimli = new Dwarf("Gimli", 100, gimliInventory, 60);
+                        Protection roundedShield = new Protection("Rounded shield", 20);
+                        Weapon battleAxe = new Weapon("Battle Axe", 30);
+                        gimli.Inventory.AddWeaponry(battleAxe);
+                        gimli.Inventory.AddWeaponry(roundedShield);
+                        gimli.SubmitCharacter();
 
 
-            // * Creando a un Dwarf
-            Inventory bolsoninventory = new Inventory();
-            Dwarf bolson = new Dwarf("Bolson", 100, bolsoninventory, 60);
-            Protection woodenShield = new Protection("Wooden shield", 10);
-            Weapon silverSword = new Weapon("silver Sword", 30);
-            bolson.Inventory.AddWeaponry(silverSword);
-            bolson.Inventory.AddWeaponry(woodenShield);
-            bolson.SubmitCharacter();
+                        // * Creando a un Elf
+                        Inventory BartolomeoInventory = new Inventory();
+                        Elf Bartolomeo = new  Elf("Bartolomeo", 100, BartolomeoInventory, 30);
+                        Protection spiritualShield = new Protection("Spiritual shield", 10);
+                        Weapon spiritualDagger = new Weapon("Spiritual Dagger", 40);
+                        Bartolomeo.Inventory.AddWeaponry(spiritualDagger);
+                        Bartolomeo.Inventory.AddWeaponry(spiritualShield);
+                        Bartolomeo.SubmitCharacter();
 
+
+                        // * Creando a un Dwarf
+                        Inventory bolsoninventory = new Inventory();
+                        Dwarf bolson = new Dwarf("Bolson", 100, bolsoninventory, 60);
+                        Protection woodenShield = new Protection("Wooden shield", 10);
+                        Weapon silverSword = new Weapon("silver Sword", 30);
+                        bolson.Inventory.AddWeaponry(silverSword);
+                        bolson.Inventory.AddWeaponry(woodenShield);
+                        bolson.SubmitCharacter();
+            */
 
             /*
             //Instancias para cada item

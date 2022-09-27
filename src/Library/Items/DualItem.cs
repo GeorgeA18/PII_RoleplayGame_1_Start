@@ -1,3 +1,6 @@
+
+namespace RPG;
+
 public class DualItem : IItem{
     public string Name{get; set;}
     public int AttackValue{get; set;}
