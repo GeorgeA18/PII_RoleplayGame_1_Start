@@ -6,17 +6,19 @@ public class Wizard : ICharacter{
     public string Name{get;set;}
     public Inventory Inventory {get;set;}
     public SpellBook SpellBook {get;set;}
+    public Equipment Equipment { get; set; }
     public int Health{get;set;}
     public int AttackValue{get;}
     public int DefenseValue{get;}
     public int DefaultCure{get; set;}
     public int CureValue{get;set;}
-    public Wizard(string Name, int Health, Inventory inventory, SpellBook spellBook, int defaultCure){
+    public Wizard(string Name, int Health, Inventory inventory, SpellBook spellBook,int defaultCure){
 
         this.Name= Name.Trim();
         this.Health = Health;
         this.Inventory= inventory;
         this.SpellBook = spellBook;
+        this.Equipment = Inventory.Equipment;
         this.DefaultCure = defaultCure;
         this.CureValue = DefaultCure+this.SpellBook.GetSpellBookCure();
         this.AttackValue = this.Inventory.GetAttackValue() + this.SpellBook.GetSpellBookAttack();
@@ -73,7 +75,7 @@ public class Wizard : ICharacter{
         ValidationCharacter Validator = new ValidationCharacter(this);
         Validator.ParameterReview();
     }
-
+    
     public void SubmitCharacter()
     {
         Console.WriteLine($"\nName: -|{this.Name}|-");

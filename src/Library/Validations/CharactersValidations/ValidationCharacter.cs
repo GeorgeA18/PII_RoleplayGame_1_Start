@@ -17,12 +17,13 @@ public class ValidationCharacter : IValidationCharacters
     {
         this.NameReview(this.Character.Name);
         this.HealthReview(this.Character.Health);
-        this.HealthReview(this.Character.DefaultCure);
+        this.DefaultCureReview(this.Character.DefaultCure);
     }
 
     // Verifica que el nombre no esté vacío o sea inválido.
     public void NameReview(string name)  
     {
+        
         if (string.IsNullOrEmpty(name))
         {
             this.Character.Name = "Sin Nombre";

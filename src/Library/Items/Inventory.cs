@@ -10,10 +10,14 @@ public class Inventory{
     //Como uno puede resolver cualquier tipo de item, se utiliza la interfaz, en cambio para el otro, solo la clase Gear
     public List<Gear> CharacterGear;
     public List<IItem> CharacterWeaponry;
+
+    public Equipment Equipment{get;set;}
     
-    public Inventory(){
+    public Inventory(Equipment equipment)
+    {
         this.CharacterGear = new List<Gear>();
         this.CharacterWeaponry = new List<IItem>();
+        this.Equipment = equipment;
     }
 
     public void AddGear(Gear gear){
@@ -51,6 +55,47 @@ public class Inventory{
         return defenseValue;
     }
 
+
+    // * Metodos para Equipar las armas y atuendos.
+    public void EquipRightArm(IItem weapon)
+    {
+        if (CharacterWeaponry.Contains(weapon))
+        {
+            this.Equipment.RightArm = weapon;
+        }
+        else
+        {
+            Console.WriteLine("No posees este arma en el inventario");
+        }
+
+    }
+
+    public void EquipLeftArm(IItem weapon)
+    {
+        if (CharacterWeaponry.Contains(weapon))
+        {
+            this.Equipment.LeftArm = weapon;
+        }
+        else
+        {
+            Console.WriteLine("No posees esta arma en el inventario.");
+        }
+
+    }
+
+    public void EquipArmor(Protection armor)
+    {
+        if (CharacterWeaponry.Contains(armor))
+        {
+            this.Equipment.Armor = armor;
+        }
+        else
+        {
+            Console.WriteLine("No posees este atuendo en el inventario.");
+        }
+    }
+
+    // * Metodo de Presentación de los items
     public void PrintInventory(ICharacter character){
 
         Console.WriteLine($"{character.Name}'s INVENTORY SUMMARY");

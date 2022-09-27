@@ -4,6 +4,7 @@ namespace RPG;
 public class Elf : ICharacter{
     public string Name{get;set;}
     public Inventory Inventory {get; set;}
+    public Equipment Equipment { get; set; }
     public int Health{get;set;}
     public int AttackValue{get;}
     public int DefenseValue{get;}
