@@ -23,24 +23,22 @@ public class Wizard : ICharacter{
         this.DefenseValue = this.Inventory.GetDefenseValue()+ this.SpellBook.GetSpellBookDefense();
         this.ValidationAttributes();
     } 
-    public void Attack(ICharacter character, IItem item){
-        if (this.Inventory.CharacterWeaponry.Contains(item))
+    public void Attack(ICharacter character)
+    {
+        if (this.Inventory.Equipment.RightArm != null || this.Inventory.Equipment.LeftArm != null)
         {
-            if (character.Health + character.DefenseValue > item.AttackValue )
+            if (character.Health + character.DefenseValue > this.AttackValue )
             {
-                character.Health -= (item.AttackValue-character.DefenseValue);
-                Console.WriteLine($"{this.Name} attacked {character.Name} with {item} and now their health decreased to {character.Health}.");
+                character.Health -= (this.AttackValue-character.DefenseValue);
+                Console.WriteLine($"{this.Name} attacked {character.Name} and now their health decreased to {character.Health}.");
             }
             else
             {
                 character.Health = 0;
-                Console.WriteLine($"{this.Name} attacked {character.Name} with {item} and killed them.");
+                Console.WriteLine($"{this.Name} attacked {character.Name} and killed them.");
             }
-        }  
-        else
-        {
-            Console.WriteLine($"You do not have that item!");
         }
+        
     }
 
     public void MagicAttack(ICharacter character, int numHechizo){

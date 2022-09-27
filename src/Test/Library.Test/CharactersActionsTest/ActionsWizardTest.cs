@@ -11,16 +11,22 @@ namespace Test.Library
         public void ValidActionAtack()
         {
             int Health = 100;
-            Inventory harryInventory = new Inventory();
+
+            Equipment harryEquipment = new Equipment();
+            Inventory harryInventory = new Inventory(harryEquipment);
             SpellBook harrySpellBook = new SpellBook("Harry's Spellbook");
-            Wizard harry = new Wizard("harry", 100, harryInventory, harrySpellBook, 40);
+            Wizard harry = new Wizard("Harry", 100, harryInventory, harrySpellBook, 25);
+
             Weapon MagicStick = new Weapon("Magic Stick", 40);
             harry.Inventory.AddWeaponry(MagicStick);
-            Inventory BartolomeoInventory = new Inventory();
+            harry.Inventory.EquipRightArm(MagicStick);
+
+            Equipment BartolomeoEquipment = new Equipment();
+            Inventory BartolomeoInventory = new Inventory(BartolomeoEquipment);
             Elf Bartolomeo = new  Elf("Bartolomeo", Health, BartolomeoInventory, 40);
 
             
-            harry.Attack(Bartolomeo, MagicStick);
+            harry.Attack(Bartolomeo);
             Assert.That(Health - MagicStick.AttackValue, Is.EqualTo(Bartolomeo.Health));
         }
 
@@ -29,14 +35,18 @@ namespace Test.Library
         {
             int dead=0;
             int Health = 20;
-            Inventory harryInventory = new Inventory();
+            Equipment harryEquipment = new Equipment();
+            Inventory harryInventory = new Inventory(harryEquipment);
             SpellBook harrySpellBook = new SpellBook("Harry's Spellbook");
-            Wizard harry = new Wizard("harry", 100, harryInventory, harrySpellBook, 40);
+            Wizard harry = new Wizard("Harry", 100, harryInventory, harrySpellBook, 25);
+
             Weapon MagicStick = new Weapon("Magic Stick", 40);
             harry.Inventory.AddWeaponry(MagicStick);
-            Inventory BartolomeoInventory = new Inventory();
-            Elf Bartolomeo = new  Elf("Bartolomeo", Health, BartolomeoInventory, 40);
+            harry.Inventory.EquipRightArm(MagicStick);
 
+            Equipment BartolomeoEquipment = new Equipment();
+            Inventory BartolomeoInventory = new Inventory(BartolomeoEquipment);
+            Elf Bartolomeo = new Elf("Bartolomeo", Health, BartolomeoInventory, 40);
             
             harry.Attack(Bartolomeo, MagicStick);
             Assert.That(dead, Is.EqualTo(Bartolomeo.Health));
