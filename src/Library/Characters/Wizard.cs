@@ -22,7 +22,7 @@ public class Wizard : ICharacter{
         this.AttackValue = this.Inventory.GetAttackValue() + this.SpellBook.GetSpellBookAttack();
         this.DefenseValue = this.Inventory.GetDefenseValue()+ this.SpellBook.GetSpellBookDefense();
         this.ValidationAttributes();
-    } 
+    }
     public void Attack(ICharacter character, IItem item){
         if (this.Inventory.CharacterWeaponry.Contains(item))
         {
