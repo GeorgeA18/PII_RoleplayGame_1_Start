@@ -5,7 +5,6 @@ namespace RPG;
 public class Dwarf : ICharacter{
     public string Name{get;set;}
     public Inventory Inventory {get; set;}
-    public Equipment Equipment { get; set; }
     public int Health{get;set;}
     public int AttackValue{get;}
     public int DefenseValue{get;}

@@ -6,7 +6,6 @@ public class Wizard : ICharacter{
     public string Name{get;set;}
     public Inventory Inventory {get;set;}
     public SpellBook SpellBook {get;set;}
-    public Equipment Equipment { get; set; }
     public int Health{get;set;}
     public int AttackValue{get;}
     public int DefenseValue{get;}
@@ -18,7 +17,6 @@ public class Wizard : ICharacter{
         this.Health = Health;
         this.Inventory= inventory;
         this.SpellBook = spellBook;
-        this.Equipment = Inventory.Equipment;
         this.DefaultCure = defaultCure;
         this.CureValue = DefaultCure+this.SpellBook.GetSpellBookCure();
         this.AttackValue = this.Inventory.GetAttackValue() + this.SpellBook.GetSpellBookAttack();

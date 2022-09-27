@@ -16,10 +16,10 @@ namespace RPG
 
             Weapon MagicStick = new Weapon("Magic Stick", 40);
             harry.Inventory.AddWeaponry(MagicStick);
-
             harry.Inventory.EquipRightArm(MagicStick);
 
             harry.SubmitCharacter();
+            
             /*
                         // * Creando a un Dwarf.
                         Inventory gimliInventory= new Inventory();

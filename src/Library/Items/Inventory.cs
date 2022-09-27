@@ -37,26 +37,38 @@ public class Inventory{
 
     public int GetAttackValue(){
         int attackValue=0;
-
-        foreach(IItem item in this.CharacterWeaponry){
-            attackValue+=item.AttackValue;
+        if (this.Equipment.LeftArm != null)
+        {
+            attackValue += this.Equipment.LeftArm.AttackValue;
+        }
+        if (this.Equipment.RightArm != null)
+        {
+            attackValue += this.Equipment.RightArm.AttackValue;
         }
         return attackValue;
     }
 
-    // ! verificar de que items se deberian tomar el valor de defensa.
     public int GetDefenseValue(){
         int defenseValue=0;
-
-        foreach(IItem item in this.CharacterWeaponry){
-            defenseValue+=item.DefenseValue;
+        if (this.Equipment.LeftArm != null)
+        {
+            defenseValue += this.Equipment.LeftArm.DefenseValue;
+        }
+        if (this.Equipment.RightArm != null)
+        {
+            defenseValue += this.Equipment.RightArm.DefenseValue;
+        }
+        if (this.Equipment.Armor != null)
+        {
+            defenseValue += this.Equipment.Armor.DefenseValue;
         }
 
         return defenseValue;
     }
 
 
-    // * Metodos para Equipar las armas y atuendos.
+    // * Metodos para Equipar y desequipar las armas y atuendos.
+    // ! se deberian colocar estos metodos dentro de la clase Equipment
     public void EquipRightArm(IItem weapon)
     {
         if (CharacterWeaponry.Contains(weapon))
@@ -93,6 +105,22 @@ public class Inventory{
         {
             Console.WriteLine("No posees este atuendo en el inventario.");
         }
+    }
+    public void UnEquipRightArm(IItem weapon)
+    {
+        this.Equipment.RightArm = null;
+
+    }
+
+    public void UnEquipLeftArm(IItem weapon)
+    {
+        this.Equipment.LeftArm = null;
+
+    }
+
+    public void UnEquipArmor()
+    {
+        this.Equipment.Armor = null;
     }
 
     // * Metodo de Presentación de los items
