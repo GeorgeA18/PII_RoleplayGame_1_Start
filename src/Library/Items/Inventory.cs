@@ -11,7 +11,7 @@ public class Inventory{
     public List<Gear> CharacterGear;
     public List<IItem> CharacterWeaponry;
     
-    public Inventory(Equipment equipment)
+    public Inventory()
     {
         this.CharacterGear = new List<Gear>();
         this.CharacterWeaponry = new List<IItem>();
@@ -30,10 +30,6 @@ public class Inventory{
     public void RemoveWeaponry(IItem weaponry){
         CharacterWeaponry.Add(weaponry);
     }
-
-
-    
-
 
     // * Metodo de Presentación de los items
     public void PrintInventory(ICharacter character){

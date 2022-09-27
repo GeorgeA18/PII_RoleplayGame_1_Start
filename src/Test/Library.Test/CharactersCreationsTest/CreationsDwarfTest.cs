@@ -14,9 +14,9 @@ namespace Test.Library
         {
             const string nameValid = "harry";
             const string nameExpected = "harry";
-
             Inventory harryInventory = new Inventory();
-            Dwarf harry = new Dwarf(nameValid, 100, harryInventory, 40);
+            Equipment harryEquipment = new Equipment(harryInventory);
+            Dwarf harry = new Dwarf(nameValid, 100, harryEquipment, 40);
 
             Assert.That(nameExpected, Is.EqualTo(harry.Name));
 
@@ -31,12 +31,13 @@ namespace Test.Library
             const string nameExpected = "Sin Nombre";
 
             Inventory harryInventory = new Inventory();
-             
-            Dwarf harry = new Dwarf(nameWrong1, 100, harryInventory, 40);
+            Equipment harryEquipment = new Equipment(harryInventory);
+
+            Dwarf harry = new Dwarf(nameWrong1, 100, harryEquipment, 40);
 
             Assert.That(nameExpected, Is.EqualTo(harry.Name));
 
-            Dwarf brian = new Dwarf(nameWrong2, 100, harryInventory, 40);
+            Dwarf brian = new Dwarf(nameWrong2, 100, harryEquipment, 40);
             Assert.That(nameExpected, Is.EqualTo(brian.Name));
 
 
@@ -52,9 +53,11 @@ namespace Test.Library
             const int health = 100;
             const int expected = 100;
 
+            
             Inventory harryInventory = new Inventory();
-             
-            Dwarf harry = new Dwarf("harry", health, harryInventory, 40);
+            Equipment harryEquipment = new Equipment(harryInventory);
+
+            Dwarf harry = new Dwarf("harry", health, harryEquipment, 40);
 
             Assert.That(expected, Is.EqualTo(harry.Health));
 
@@ -68,14 +71,18 @@ namespace Test.Library
             const int healthWrong1 = 0;
             const int healthWrong2 = 301;
             const int expected = 100;
-
+            
             Inventory harryInventory = new Inventory();
-             
-            Dwarf harry = new Dwarf("harry", healthWrong1, harryInventory, 40);
+            Equipment harryEquipment = new Equipment(harryInventory);
+
+            Dwarf harry = new Dwarf("harry", healthWrong1, harryEquipment, 40);
 
             Assert.That(expected, Is.EqualTo(harry.Health));
+            
+            Inventory brianInventory = new Inventory();
+            Equipment brianEquipment = new Equipment(brianInventory);
 
-            Dwarf brian = new Dwarf("brian", healthWrong2, harryInventory, 40);
+            Dwarf brian = new Dwarf("brian", healthWrong2, brianEquipment, 40);
             Assert.That(expected, Is.EqualTo(brian.Health));
 
 
@@ -90,10 +97,11 @@ namespace Test.Library
         {
             const int cure = 40;
             const int expected = 40;
-
+            
             Inventory harryInventory = new Inventory();
-             
-            Dwarf harry = new Dwarf("harry", 100, harryInventory, cure);
+            Equipment harryEquipment = new Equipment(harryInventory);
+
+            Dwarf harry = new Dwarf("harry", 100, harryEquipment, cure);
 
             Assert.That(expected, Is.EqualTo(harry.DefaultCure));
 
@@ -109,12 +117,16 @@ namespace Test.Library
             const int expected = 50;
 
             Inventory harryInventory = new Inventory();
-             
-            Dwarf harry = new Dwarf("harry", 100, harryInventory, cureWrong1);
+            Equipment harryEquipment = new Equipment(harryInventory);
+
+            Dwarf harry = new Dwarf("harry", 100, harryEquipment, cureWrong1);
 
             Assert.That(expected, Is.EqualTo(harry.DefaultCure));
 
-            Dwarf brian = new Dwarf("brian", 100, harryInventory, cureWrong2);
+            Inventory brianInventory = new Inventory();
+            Equipment brianEquipment = new Equipment(brianInventory);
+
+            Dwarf brian = new Dwarf("brian", 100, brianEquipment, cureWrong2);
             Assert.That(expected, Is.EqualTo(brian.DefaultCure));
 
 

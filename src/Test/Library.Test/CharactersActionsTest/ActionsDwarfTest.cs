@@ -12,13 +12,17 @@ namespace Test.Library
         {
             int Health = 100;
             Inventory BartolomeoInventory = new Inventory();
-            Elf Bartolomeo = new  Elf("Bartolomeo", Health, BartolomeoInventory, 40);
+            Equipment BartolomeoEquipment = new Equipment(BartolomeoInventory);
+            Elf Bartolomeo = new  Elf("Bartolomeo", Health, BartolomeoEquipment , 40);
             Inventory gimliInventory= new Inventory();
-            Dwarf gimli = new Dwarf("Gimli", 100, gimliInventory, 60);
+            Equipment gimliEquipment = new Equipment(gimliInventory);
             Weapon battleAxe = new Weapon("Battle Axe", 30);
-            gimli.Inventory.AddWeaponry(battleAxe);
+            gimliInventory.AddWeaponry(battleAxe);
+            gimliEquipment.EquipRightArm(battleAxe);
+            Dwarf gimli = new Dwarf("Gimli", 100, gimliEquipment, 60);
+            
 
-            gimli.Attack(Bartolomeo, battleAxe);
+            gimli.Attack(Bartolomeo);
             Assert.That(Health - battleAxe.AttackValue, Is.EqualTo(Bartolomeo.Health));
         }
 
@@ -28,13 +32,16 @@ namespace Test.Library
             int dead=0;
             int Health = 20;
             Inventory BartolomeoInventory = new Inventory();
-            Elf Bartolomeo = new  Elf("Bartolomeo", Health, BartolomeoInventory, 40);
+            Equipment BartolomeoEquipment = new Equipment(BartolomeoInventory);
+            Elf Bartolomeo = new  Elf("Bartolomeo", Health, BartolomeoEquipment, 40);
             Inventory gimliInventory= new Inventory();
-            Dwarf gimli = new Dwarf("Gimli", 100, gimliInventory, 60);
+            Equipment gimliEquipment = new Equipment(gimliInventory);
             Weapon battleAxe = new Weapon("Battle Axe", 30);
-            gimli.Inventory.AddWeaponry(battleAxe);
+            gimliInventory.AddWeaponry(battleAxe);
+            gimliEquipment.EquipRightArm(battleAxe);
+            Dwarf gimli = new Dwarf("Gimli", 100, gimliEquipment, 60);
             
-            gimli.Attack(Bartolomeo, battleAxe);
+            gimli.Attack(Bartolomeo);
             Assert.That(dead, Is.EqualTo(Bartolomeo.Health));
         }
         [Test]
@@ -43,7 +50,8 @@ namespace Test.Library
             int cure=40;
             int Health=60;
             Inventory gimliInventory= new Inventory();
-            Dwarf gimli = new Dwarf("Gimli", Health, gimliInventory, cure);
+            Equipment gimliEquipment = new Equipment(gimliInventory);
+            Dwarf gimli = new Dwarf("Gimli", Health, gimliEquipment, cure);
             
             gimli.Cure(gimli);
             Assert.That(cure+Health, Is.EqualTo(gimli.Health));
@@ -55,7 +63,8 @@ namespace Test.Library
             int cure=40;
             int maxHealth=100;
             Inventory gimliInventory= new Inventory();
-            Dwarf gimli = new Dwarf("Gimli", 100, gimliInventory, cure);
+            Equipment gimliEquipment = new Equipment(gimliInventory);
+            Dwarf gimli = new Dwarf("Gimli", 100, gimliEquipment, cure);
             
             gimli.Cure(gimli);
             Assert.That(gimli.Health, Is.EqualTo(maxHealth));
