@@ -9,7 +9,7 @@ public interface ICharacter{
     int AttackValue{get;}
     int DefenseValue{get;}
     int DefaultCure{get;set;}
-    void Attack(ICharacter character, IItem Item);
+    void Attack(ICharacter character);
     void Cure(ICharacter character);
     void SubmitCharacter();
     void ValidationAttributes();

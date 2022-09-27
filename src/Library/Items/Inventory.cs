@@ -111,13 +111,11 @@ public class Inventory{
         this.Equipment.RightArm = null;
 
     }
-
     public void UnEquipLeftArm(IItem weapon)
     {
         this.Equipment.LeftArm = null;
 
     }
-
     public void UnEquipArmor()
     {
         this.Equipment.Armor = null;
