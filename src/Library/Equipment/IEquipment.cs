@@ -11,4 +11,14 @@ public interface IEquipment
     // Para la armadura y protección.
     public Protection Armor { get; set; }
 
+    void EquipRightArm(IItem weapon);
+    void EquipLeftArm(IItem weapon);
+
+    void EquipArmor(Protection armor);
+
+    void UnEquipRightArm(IItem weapon);
+
+    public void UnEquipLeftArm(IItem weapon);
+
+    public void UnEquipArmor();
 }
