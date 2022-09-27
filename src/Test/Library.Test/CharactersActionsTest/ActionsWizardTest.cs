@@ -11,19 +11,18 @@ namespace Test.Library
         public void ValidActionAtack()
         {
             int Health = 100;
-
-            Equipment harryEquipment = new Equipment();
-            Inventory harryInventory = new Inventory(harryEquipment);
+            
+            Inventory harryInventory = new Inventory();
+            Equipment harryEquipment = new Equipment(harryInventory);
             SpellBook harrySpellBook = new SpellBook("Harry's Spellbook");
-            Wizard harry = new Wizard("Harry", 100, harryInventory, harrySpellBook, 25);
-
             Weapon MagicStick = new Weapon("Magic Stick", 40);
-            harry.Inventory.AddWeaponry(MagicStick);
-            harry.Inventory.EquipRightArm(MagicStick);
+            harryInventory.AddWeaponry(MagicStick);
+            harryEquipment.EquipRightArm(MagicStick);
+            Wizard harry = new Wizard("Harry", 100, harryEquipment, harrySpellBook, 25);
 
-            Equipment BartolomeoEquipment = new Equipment();
-            Inventory BartolomeoInventory = new Inventory(BartolomeoEquipment);
-            Elf Bartolomeo = new  Elf("Bartolomeo", Health, BartolomeoInventory, 40);
+            Inventory BartolomeoInventory = new Inventory();
+            Equipment BartolomeoEquipment = new Equipment(BartolomeoInventory);
+            Elf Bartolomeo = new  Elf("Bartolomeo", Health, BartolomeoEquipment, 40);
 
             
             harry.Attack(Bartolomeo);
@@ -35,20 +34,20 @@ namespace Test.Library
         {
             int dead=0;
             int Health = 20;
-            Equipment harryEquipment = new Equipment();
-            Inventory harryInventory = new Inventory(harryEquipment);
+            Inventory harryInventory = new Inventory();
+            Equipment harryEquipment = new Equipment(harryInventory);
             SpellBook harrySpellBook = new SpellBook("Harry's Spellbook");
-            Wizard harry = new Wizard("Harry", 100, harryInventory, harrySpellBook, 25);
-
             Weapon MagicStick = new Weapon("Magic Stick", 40);
-            harry.Inventory.AddWeaponry(MagicStick);
-            harry.Inventory.EquipRightArm(MagicStick);
+            harryInventory.AddWeaponry(MagicStick);
+            harryEquipment.EquipRightArm(MagicStick);
+            Wizard harry = new Wizard("Harry", 100, harryEquipment, harrySpellBook, 25);
 
-            Equipment BartolomeoEquipment = new Equipment();
-            Inventory BartolomeoInventory = new Inventory(BartolomeoEquipment);
-            Elf Bartolomeo = new Elf("Bartolomeo", Health, BartolomeoInventory, 40);
+
+            Inventory BartolomeoInventory = new Inventory();
+            Equipment BartolomeoEquipment = new Equipment(BartolomeoInventory);
+            Elf Bartolomeo = new  Elf("Bartolomeo", Health, BartolomeoEquipment, 40);
             
-            harry.Attack(Bartolomeo, MagicStick);
+            harry.Attack(Bartolomeo);
             Assert.That(dead, Is.EqualTo(Bartolomeo.Health));
         }
         [Test]
@@ -57,8 +56,9 @@ namespace Test.Library
             int cure=40;
             int Health=60;
             Inventory harryInventory = new Inventory();
+            Equipment harryEquipment = new Equipment(harryInventory);
             SpellBook harrySpellBook = new SpellBook("Harry's Spellbook");
-            Wizard harry = new Wizard("harry", Health, harryInventory, harrySpellBook, cure);
+            Wizard harry = new Wizard("Harry", Health, harryEquipment, harrySpellBook, cure);
             
             harry.Cure(harry);
             Assert.That(cure+Health, Is.EqualTo(harry.Health));
@@ -70,8 +70,9 @@ namespace Test.Library
             int cure=40;
             int maxHealth=100;
             Inventory harryInventory = new Inventory();
+            Equipment harryEquipment = new Equipment(harryInventory);
             SpellBook harrySpellBook = new SpellBook("Harry's Spellbook");
-            Wizard harry = new Wizard("harry", 100, harryInventory, harrySpellBook, cure);
+            Wizard harry = new Wizard("Harry", 100, harryEquipment, harrySpellBook, cure);
             
             harry.Cure(harry);
             Assert.That(harry.Health, Is.EqualTo(maxHealth));

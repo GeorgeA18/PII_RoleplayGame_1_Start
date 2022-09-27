@@ -10,14 +10,17 @@ namespace Test.Library{
         {
             int Health = 100;
             Inventory harryInventory = new Inventory();
+            Equipment harryEquipment = new Equipment(harryInventory);
             SpellBook harrySpellBook = new SpellBook("Harry's Spellbook");
-            Wizard harry = new Wizard("harry", Health, harryInventory, harrySpellBook, 40);
+            Wizard harry = new Wizard("harry", Health, harryEquipment, harrySpellBook, 40);
             Inventory BartolomeoInventory = new Inventory();
-            Elf Bartolomeo = new  Elf("Bartolomeo", 100, BartolomeoInventory, 40);
+            Equipment BartolomeoEquipment = new Equipment(BartolomeoInventory);
             Weapon spiritualDagger = new Weapon("Spiritual Dagger", 40);
-            Bartolomeo.Inventory.AddWeaponry(spiritualDagger);
+            BartolomeoInventory.AddWeaponry(spiritualDagger);
+            BartolomeoEquipment.EquipRightArm(spiritualDagger);
+            Elf Bartolomeo = new  Elf("Bartolomeo", 100, BartolomeoEquipment, 40);
 
-            Bartolomeo.Attack(harry, spiritualDagger);
+            Bartolomeo.Attack(harry);
             Assert.That(Health - spiritualDagger.AttackValue, Is.EqualTo(harry.Health));
         }
 
@@ -27,15 +30,18 @@ namespace Test.Library{
             int dead=0;
             int Health = 20;
             Inventory harryInventory = new Inventory();
+            Equipment harryEquipment = new Equipment(harryInventory);
             SpellBook harrySpellBook = new SpellBook("Harry's Spellbook");
-            Wizard harry = new Wizard("harry", Health, harryInventory, harrySpellBook, 40);
+            Wizard harry = new Wizard("harry", Health, harryEquipment, harrySpellBook, 40);
             Inventory BartolomeoInventory = new Inventory();
-            Elf Bartolomeo = new  Elf("Bartolomeo", 100, BartolomeoInventory, 40);
+            Equipment BartolomeoEquipment = new Equipment(BartolomeoInventory);
             Weapon spiritualDagger = new Weapon("Spiritual Dagger", 40);
-            Bartolomeo.Inventory.AddWeaponry(spiritualDagger);
+            BartolomeoInventory.AddWeaponry(spiritualDagger);
+            BartolomeoEquipment.EquipRightArm(spiritualDagger);
+            Elf Bartolomeo = new  Elf("Bartolomeo", 100, BartolomeoEquipment, 40);
 
             
-            Bartolomeo.Attack(harry, spiritualDagger);
+            Bartolomeo.Attack(harry);
             Assert.That(dead, Is.EqualTo(harry.Health));
         }
         [Test]
@@ -44,7 +50,8 @@ namespace Test.Library{
             int cure=40;
             int Health=60;
             Inventory BartolomeoInventory = new Inventory();
-            Elf Bartolomeo = new  Elf("Bartolomeo", Health, BartolomeoInventory, 40);
+            Equipment BartolomeoEquipment = new Equipment(BartolomeoInventory);
+            Elf Bartolomeo = new  Elf("Bartolomeo", Health, BartolomeoEquipment, 40);
             
             Bartolomeo.Cure(Bartolomeo);
             Assert.That(cure+Health, Is.EqualTo(Bartolomeo.Health));
@@ -56,7 +63,8 @@ namespace Test.Library{
             int cure=40;
             int maxHealth=100;
             Inventory BartolomeoInventory = new Inventory();
-            Elf Bartolomeo = new  Elf("Bartolomeo", 100, BartolomeoInventory, cure);
+            Equipment BartolomeoEquipment = new Equipment(BartolomeoInventory);
+            Elf Bartolomeo = new  Elf("Bartolomeo", 100, BartolomeoEquipment, cure);
             
             Bartolomeo.Cure(Bartolomeo);
             Assert.That(Bartolomeo.Health, Is.EqualTo(maxHealth));

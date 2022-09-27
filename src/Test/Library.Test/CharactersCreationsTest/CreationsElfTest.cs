@@ -16,7 +16,8 @@ namespace Test.Library
             const string nameExpected = "harry";
 
             Inventory harryInventory = new Inventory();
-             Elf harry = new  Elf(nameValid, 100, harryInventory, 40);
+            Equipment harryEquipment = new Equipment(harryInventory);
+             Elf harry = new  Elf(nameValid, 100, harryEquipment, 40);
 
             Assert.That(nameExpected, Is.EqualTo(harry.Name));
 
@@ -31,12 +32,13 @@ namespace Test.Library
             const string nameExpected = "Sin Nombre";
 
             Inventory harryInventory = new Inventory();
+            Equipment harryEquipment = new Equipment(harryInventory);
              
-             Elf harry = new  Elf(nameWrong1, 100, harryInventory, 40);
+            Elf harry = new  Elf(nameWrong1, 100, harryEquipment, 40);
 
             Assert.That(nameExpected, Is.EqualTo(harry.Name));
 
-             Elf brian = new  Elf(nameWrong2, 100, harryInventory, 40);
+             Elf brian = new  Elf(nameWrong2, 100, harryEquipment, 40);
             Assert.That(nameExpected, Is.EqualTo(brian.Name));
 
 
@@ -53,8 +55,8 @@ namespace Test.Library
             const int expected = 100;
 
             Inventory harryInventory = new Inventory();
-             
-            Elf harry = new  Elf("harry", health, harryInventory, 40);
+            Equipment harryEquipment = new Equipment(harryInventory);             
+            Elf harry = new  Elf("harry", health, harryEquipment, 40);
 
             Assert.That(expected, Is.EqualTo(harry.Health));
 
@@ -70,12 +72,13 @@ namespace Test.Library
             const int expected = 100;
 
             Inventory harryInventory = new Inventory();
+            Equipment harryEquipment = new Equipment(harryInventory);
              
-             Elf harry = new  Elf("harry", healthWrong1, harryInventory, 40);
+             Elf harry = new  Elf("harry", healthWrong1, harryEquipment , 40);
 
             Assert.That(expected, Is.EqualTo(harry.Health));
 
-             Elf brian = new  Elf("brian", healthWrong2, harryInventory, 40);
+             Elf brian = new  Elf("brian", healthWrong2, harryEquipment, 40);
             Assert.That(expected, Is.EqualTo(brian.Health));
 
 
@@ -92,8 +95,9 @@ namespace Test.Library
             const int expected = 40;
 
             Inventory harryInventory = new Inventory();
+            Equipment harryEquipment = new Equipment(harryInventory);
              
-             Elf harry = new  Elf("harry", 100, harryInventory, cure);
+             Elf harry = new  Elf("harry", 100, harryEquipment, cure);
 
             Assert.That(expected, Is.EqualTo(harry.DefaultCure));
 
@@ -109,12 +113,13 @@ namespace Test.Library
             const int expected = 50;
 
             Inventory harryInventory = new Inventory();
+            Equipment harryEquipment = new Equipment(harryInventory);
              
-             Elf harry = new  Elf("harry", 100, harryInventory, cureWrong1);
+             Elf harry = new  Elf("harry", 100, harryEquipment, cureWrong1);
 
             Assert.That(expected, Is.EqualTo(harry.DefaultCure));
 
-             Elf brian = new  Elf("brian", 100, harryInventory, cureWrong2);
+             Elf brian = new  Elf("brian", 100, harryEquipment, cureWrong2);
             Assert.That(expected, Is.EqualTo(brian.DefaultCure));
 
 

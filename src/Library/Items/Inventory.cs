@@ -31,10 +31,6 @@ public class Inventory{
         CharacterWeaponry.Add(weaponry);
     }
 
-
-    
-
-
     // * Metodo de Presentación de los items
     public void PrintInventory(ICharacter character){
 
