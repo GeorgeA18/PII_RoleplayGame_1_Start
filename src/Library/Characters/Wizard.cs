@@ -4,34 +4,28 @@ namespace RPG;
 
 public class Wizard : ICharacter{
     public string Name{get;set;}
-    public Inventory Inventory {get;set;}
+    public Equipment Equipment {get;set;}
     public SpellBook SpellBook {get;set;}
     public int Health{get;set;}
     public int AttackValue{get;}
     public int DefenseValue{get;}
     public int DefaultCure{get; set;}
     public int CureValue{get;set;}
-    public Wizard(string Name, int Health, Inventory inventory, SpellBook spellBook,int defaultCure){
+    public Wizard(string Name, int Health, Equipment equipment, SpellBook spellBook,int defaultCure){
 
         this.Name= Name.Trim();
         this.Health = Health;
-        this.Inventory= inventory;
+        this.Equipment= equipment;
         this.SpellBook = spellBook;
         this.DefaultCure = defaultCure;
         this.CureValue = DefaultCure+this.SpellBook.GetSpellBookCure();
-        this.AttackValue = this.Inventory.GetAttackValue() + this.SpellBook.GetSpellBookAttack();
-        this.DefenseValue = this.Inventory.GetDefenseValue()+ this.SpellBook.GetSpellBookDefense();
+        this.AttackValue = this.Equipment.GetAttackValue() + this.SpellBook.GetSpellBookAttack();
+        this.DefenseValue = this.Equipment.GetDefenseValue()+ this.SpellBook.GetSpellBookDefense();
         this.ValidationAttributes();
-<<<<<<< HEAD
     }
-    public void Attack(ICharacter character, IItem item){
-        if (this.Inventory.CharacterWeaponry.Contains(item))
-=======
-    } 
     public void Attack(ICharacter character)
     {
-        if (this.Inventory.Equipment.RightArm != null || this.Inventory.Equipment.LeftArm != null)
->>>>>>> 9c759169f1c5c410ae051f5ffdd254d4ea5b9a85
+        if (this.Equipment.RightArm != null || this.Equipment.LeftArm != null)
         {
             if (character.Health + character.DefenseValue > this.AttackValue )
             {
@@ -44,6 +38,11 @@ public class Wizard : ICharacter{
                 Console.WriteLine($"{this.Name} attacked {character.Name} and killed them.");
             }
         }
+        else
+        {
+            Console.WriteLine("You do not have any weapon equiped.");
+        }
+        
         
     }
 

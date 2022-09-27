@@ -5,7 +5,7 @@ namespace RPG;
 public interface ICharacter{
     string Name{get;set;}
     int Health{get;set;}
-    Inventory Inventory {get; set;}
+    Equipment Equipment {get; set;}
     int AttackValue{get;}
     int DefenseValue{get;}
     int DefaultCure{get;set;}

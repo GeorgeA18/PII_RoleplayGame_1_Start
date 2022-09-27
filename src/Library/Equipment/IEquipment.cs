@@ -9,16 +9,18 @@ public interface IEquipment
     public IItem LeftArm { get; set; }
 
     // Para la armadura y protección.
-    public Protection Armor { get; set; }
+    public Gear Armor { get; set; }
+
+    public Inventory Inventory {get;set;}
 
     void EquipRightArm(IItem weapon);
     void EquipLeftArm(IItem weapon);
+    void EquipArmor(Gear armor);
 
-    void EquipArmor(Protection armor);
-
-    void UnEquipRightArm(IItem weapon);
-
-    public void UnEquipLeftArm(IItem weapon);
-
+    void UnEquipRightArm();
+    public void UnEquipLeftArm();
     public void UnEquipArmor();
+
+    public int GetAttackValue();
+    public int GetDefenseValue();
 }
