@@ -12,4 +12,10 @@ public class WizardItem : IMagicItem{
         this.DefenseValue=DefenseValue;
         this.CureValue=CureValue;
     }
+    public void DefaultName(){
+        if(string.IsNullOrEmpty(this.Name)){
+            this.Name="Wizard Item";
+        }
+    
+    }
 }

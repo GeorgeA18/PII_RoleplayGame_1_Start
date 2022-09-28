@@ -11,10 +11,9 @@ public class DualItem : IItem{
         this.Name=Name.Trim();
         this.AttackValue=AttackValue;
         this.DefenseValue=DefenseValue;
-        NombreDefault();
+        DefaultName();
     }
-
-    public void NombreDefault(){
+    public void DefaultName(){
         if(string.IsNullOrEmpty(this.Name)){
             this.Name="Dual Item";
         }

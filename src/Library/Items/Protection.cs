@@ -10,10 +10,9 @@ public class Protection : IItem{
         this.Name=Name.Trim();
         this.AttackValue=0;
         this.DefenseValue=DefenseValue;
-        NombreDefault();
+        DefaultName();
     }
-
-    public void NombreDefault(){
+    public void DefaultName(){
         if(string.IsNullOrEmpty(this.Name)){
             this.Name="Protección";
         }

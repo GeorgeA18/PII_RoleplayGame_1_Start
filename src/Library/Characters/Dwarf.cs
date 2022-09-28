@@ -38,7 +38,7 @@ public class Dwarf : ICharacter{
         }
         else
         {
-            Console.WriteLine("You do not have any weapon equiped.");
+            Console.WriteLine("You do not have any weapon equipped.");
         }
 
     }
@@ -52,7 +52,6 @@ public class Dwarf : ICharacter{
             character.Health=100;
         }
     }
-
     public void SubmitCharacter()
     {
         Console.WriteLine($"\nName: -|{this.Name}|-");
@@ -60,7 +59,6 @@ public class Dwarf : ICharacter{
         Console.WriteLine("-|Dwarf|-");
         
     }
-
     public void ValidationAttributes()
     {
         ValidationCharacter Validator = new ValidationCharacter(this);

@@ -18,7 +18,6 @@ namespace RPG
         {
             this.Inventory = inventory;
         }
-
         public void EquipRightArm(IItem weapon)
         {
             if (Inventory.CharacterWeaponry.Contains(weapon))
@@ -31,7 +30,6 @@ namespace RPG
             }
 
         }
-
         public void EquipLeftArm(IItem weapon)
         {
             if (Inventory.CharacterWeaponry.Contains(weapon))
@@ -44,7 +42,6 @@ namespace RPG
             }
 
         }
-
         public void EquipArmor(Gear armor)
         {
             if (Inventory.CharacterGear.Contains(armor))
@@ -56,8 +53,6 @@ namespace RPG
                 Console.WriteLine("No posees este arma en el inventario");
             }
         }
-
-
         public void UnEquipRightArm()
         {
             this.RightArm = null;
@@ -72,7 +67,6 @@ namespace RPG
         {
             this.Armor = null;
         }
-
         public int GetAttackValue()
         {
             int attackValue = 0;
@@ -87,7 +81,6 @@ namespace RPG
             }
             return attackValue;
         }
-
         public int GetDefenseValue()
         {
             int defenseValue = 0;

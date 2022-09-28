@@ -3,6 +3,9 @@ using System.Collections.Generic;
 
 namespace RPG;
 
+// Se crea una clase inventario que tiene la responsabilidad de gestionar todos los ítems que poseen los personajes
+// que no están utilizando de forma activa (responsabilidad que se le asigna a Equipment).
+
 public class Inventory{
 
     //Se crean dos listas, una para el arsenal del personaje, otro para su ropaje.
@@ -16,14 +19,12 @@ public class Inventory{
         this.CharacterGear = new List<Gear>();
         this.CharacterWeaponry = new List<IItem>();
     }
-
     public void AddGear(Gear gear){
         CharacterGear.Add(gear);
     }
     public void RemoveGear(Gear gear){
         CharacterGear.Remove(gear);
     }
-
     public void AddWeaponry(IItem weaponry){
         CharacterWeaponry.Add(weaponry);
     }

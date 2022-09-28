@@ -2,8 +2,7 @@ using System.Collections.Generic;
 using System;
 
 namespace RPG;
-public class SpellBook : IItem{
-    //Faltaría un método para mostrar los spells del libro. Nota: esta creada pero falta verficar que funcione.
+public class SpellBook : IMagicItem{
 
     public string Name {get; set;}
     public int AttackValue{get; set;}
@@ -20,20 +19,17 @@ public class SpellBook : IItem{
         this.CureValue=this.GetSpellBookCure();
         NombreDefault();
         }
-
     public void NombreDefault(){
         if(string.IsNullOrEmpty(this.Name)){
             this.Name="Libro de hechizos";
         }
     }
-
     void AddSpell(Spell spell){
         CharacterSpellBook.Add(spell);
     }
     void RemoveSpell(Spell spell){
         CharacterSpellBook.Remove(spell);
     }
-
     public int GetSpellBookAttack(){
         int value=0;
         foreach(Spell spell in this.CharacterSpellBook){
@@ -41,7 +37,6 @@ public class SpellBook : IItem{
         }
         return value;
     }
-
     public int GetSpellBookDefense(){
         int value=0;
         foreach(Spell spell in this.CharacterSpellBook){
@@ -49,7 +44,6 @@ public class SpellBook : IItem{
         }
         return value;
     }
-
     public int GetSpellBookCure(){
         int value=0;
         foreach(Spell spell in this.CharacterSpellBook){
@@ -57,8 +51,6 @@ public class SpellBook : IItem{
         }
         return value;
     }
-
-    // ! Verificar que funcione.
     public void PrintSpellBook(ICharacter wizard){
 
         Console.WriteLine($"{wizard.Name}'s SPELLBOOK SUMMARY");
@@ -69,5 +61,10 @@ public class SpellBook : IItem{
             contador++;
         }
 
+    }
+    public void DefaultName(){
+        if(string.IsNullOrEmpty(this.Name)){
+            this.Name="Libro de hechizos";
+        }
     }
 }

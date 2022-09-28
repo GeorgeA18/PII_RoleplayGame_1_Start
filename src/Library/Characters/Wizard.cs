@@ -40,12 +40,10 @@ public class Wizard : ICharacter{
         }
         else
         {
-            Console.WriteLine("You do not have any weapon equiped.");
+            Console.WriteLine("You do not have any weapon equipped.");
         }
         
-        
     }
-
     public void MagicAttack(ICharacter character, int numHechizo){
         int dañoHechizo=this.SpellBook.CharacterSpellBook[numHechizo].AttackValue;
         string nombreHechizo= this.SpellBook.CharacterSpellBook[numHechizo].Name;
@@ -70,13 +68,11 @@ public class Wizard : ICharacter{
             character.Health=100;
         }
     }
-
     public void ValidationAttributes()
     {
         ValidationCharacter Validator = new ValidationCharacter(this);
         Validator.ParameterReview();
     }
-    
     public void SubmitCharacter()
     {
         Console.WriteLine($"\nName: -|{this.Name}|-");

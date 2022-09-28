@@ -11,9 +11,9 @@ public class Weapon : IItem{
         this.Name=Name.Trim();
         this.AttackValue=AttackValue;
         this.DefenseValue=0;
-        NombreDefault();
+        DefaultName();
     }
-    public void NombreDefault(){
+    public void DefaultName(){
         if(string.IsNullOrEmpty(this.Name)){
             this.Name="Arma";
         }

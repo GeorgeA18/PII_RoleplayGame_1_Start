@@ -36,7 +36,7 @@ public class Elf : ICharacter{
         }
         else
         {
-            Console.WriteLine("You do not have any weapon equiped.");
+            Console.WriteLine("You do not have any weapon equipped.");
         }
 
     }
@@ -50,13 +50,11 @@ public class Elf : ICharacter{
             character.Health=100;
         }
     }
-
     public void ValidationAttributes()
     {
         ValidationCharacter Validator = new ValidationCharacter(this);
         Validator.ParameterReview();
     }
-
     public void SubmitCharacter()
     {
         Console.WriteLine($"\nName: -|{this.Name}|-");
