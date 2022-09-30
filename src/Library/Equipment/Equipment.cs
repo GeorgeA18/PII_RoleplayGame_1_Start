@@ -1,3 +1,4 @@
+//Se debe cambiar los Console.WriteLine por returns de string para que se encargue otra parte de la impresión, y no violar el SRP
 using System;
 
 namespace RPG

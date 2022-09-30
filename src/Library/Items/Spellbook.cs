@@ -1,3 +1,4 @@
+//Se deben cambiar los Console.WriteLine por returns de strings, para poder imprimirlo desde donde sea, y no violar SRP
 using System.Collections.Generic;
 using System;
 
@@ -13,6 +14,7 @@ public class SpellBook : IMagicItem{
     public SpellBook(string Name){
         this.Name=Name.Trim();
         //Con GetSpellBookAttack se itera sobre los hechizos de SpellBook para poder así calcular el poder de ataque del libro
+        //Se conoce los valores de ataque, defensa, cura desde aquí, porque conoce a todos los spells, aplicando el principio Expert
         this.AttackValue=this.GetSpellBookAttack(); 
         //Idem que con el ataque, pero para la defensa
         this.DefenseValue=this.GetSpellBookDefense();

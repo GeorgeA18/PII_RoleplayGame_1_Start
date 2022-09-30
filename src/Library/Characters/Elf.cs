@@ -1,3 +1,4 @@
+//Se deben cambiar los Console.WriteLine por returns de strings, para poder imprimirlo desde donde sea, y no violar SRP
 using System;
 
 namespace RPG;

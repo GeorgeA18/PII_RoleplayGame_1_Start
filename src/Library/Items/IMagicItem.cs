@@ -4,7 +4,7 @@ namespace RPG;
 // Se crea la interfaz IMagicItem para luego implementar el tipo en las clases WizardItem y SpellBook, 
 // las cuales comparten las variables de instancia y método a continuación. Ésta se diferencia de IItem ya
 // que únicamente personajes de la clase Wizard pueden utilizar ítems mágicos, por lo que es pertinente
-// designarles un tipo diferente. 
+// designarles un tipo diferente. De esta manera no se viola el principio LSP.
 
 public interface IMagicItem{
 

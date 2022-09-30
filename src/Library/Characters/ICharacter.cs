@@ -4,7 +4,8 @@ namespace RPG;
 
 // Se crea la interfaz ICharacter para luego implementar el tipo en las clases Wizard, Dwarf y Elf las
 // cuales comparten las variables de instancia y métodos a continuación.
-
+// De esta manera podemos aplicar polimorfismo, teniendo las mismas acciones para todos los personajes
+// más particularidades que se les quiera agregar a cada uno.
 public interface ICharacter{
 
     // Se establecen las variables de instancia accesibles para que sea posible instanciar más de un
